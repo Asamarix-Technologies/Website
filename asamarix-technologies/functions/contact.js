@@ -1,4 +1,4 @@
-const inbox = "contact@asamarix.com";
+const inbox = "inquiries@asamarix.com";
 const maxBodyBytes = 48 * 1024;
 const fieldNames = ["kind", "name", "email", "person", "message", "cf-turnstile-response"];
 const turnstileOrigin = "https://challenges.cloudflare.com";
