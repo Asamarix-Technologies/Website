@@ -38,9 +38,8 @@ a:hover { color: var(--blue-hover); }
   padding-block: 1rem;
 }
 
-.wordmark { color: var(--ink); text-decoration: none; line-height: 1.1; }
-.wordmark span { display: block; font-size: 1.35rem; font-weight: 750; letter-spacing: -.035em; }
-.wordmark small { color: var(--blue); font-size: .75rem; font-weight: 650; letter-spacing: .09em; text-transform: uppercase; }
+.wordmark { display: inline-flex; align-items: center; }
+.wordmark img { display: block; width: auto; height: auto; max-width: min(12rem, 65vw); max-height: 3.75rem; }
 nav { display: flex; flex-wrap: wrap; gap: .15rem .35rem; margin-inline: -.55rem; }
 nav a { padding: .5rem .55rem; color: var(--muted); font-size: .9375rem; text-decoration: none; border-radius: .35rem; }
 nav a:hover, nav a[aria-current="page"] { color: var(--blue); background: var(--wash); }
@@ -83,7 +82,24 @@ p { color: var(--muted); }
 .prose p, .service-list p { margin-top: .6rem; }
 .service-list { max-width: 47rem; margin-bottom: 1.5rem; border-top: 1px solid var(--line); }
 .service-list section { padding-block: 1.3rem; border-bottom: 1px solid var(--line); }
-.notice { max-width: 47rem; padding: 1rem 1.25rem; background: var(--wash); border-left: 3px solid var(--blue); }
+.contact-email { margin-bottom: 1.5rem; }
+#contact-form { max-width: 39rem; }
+#contact-fields { min-inline-size: 0; padding: 0; margin: .85rem 0 0; border: 0; }
+#contact-fields legend { padding: 0; font-size: 1.25rem; font-weight: 700; }
+#contact-fields label { display: block; margin: 1rem 0 .3rem; font-weight: 650; }
+#contact-fields input, #contact-fields select, #contact-fields textarea {
+  display: block;
+  width: 100%;
+  padding: .65rem .75rem;
+  border: 1px solid #819ab7;
+  border-radius: .4rem;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+}
+#contact-fields textarea { resize: vertical; }
+#contact-challenge { margin-block: 1.15rem; }
+button.button { border: 0; cursor: pointer; font: inherit; font-weight: 650; }
 .site-footer { border-top: 1px solid var(--line); background: #f8fbff; color: var(--muted); font-size: .9rem; }
 
 @media (max-width: 45rem) {
