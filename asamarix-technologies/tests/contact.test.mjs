@@ -107,7 +107,7 @@ test("reports an email provider error without echoing inquiry details", async (t
   mockProviders(t, { emailFailure: true });
   const response = await submit();
   assert.equal(response.status, 502);
-  assert.match(await response.text(), /Delivery could not be confirmed/);
+  assert.match(await response.text(), /Delivery Could Not Be Confirmed/);
 });
 
 test("keeps the static email fallback on hosts outside the allowlist", async (t) => {

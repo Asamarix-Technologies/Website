@@ -1,0 +1,127 @@
+[
+  {
+    "filename": "asamarix-com-pentest-report.pdf",
+    "title": "Asamarix.com Pentest Report",
+    "service": "Web Application Penetration Testing",
+    "footer": "Hypothetical Assessment | Asamarix.com",
+    "notice": "Hypothetical assessment. No live testing of Asamarix.com was performed. The findings and evidence below are fictional.",
+    "pages": [
+      [
+        ["Engagement Record", "Report ID: ASX-WEB-EXAMPLE | Revision: 1.0 | Status: Illustrative", "Prepared for: Asamarix Technologies | Assessment window: Not applicable"],
+        ["Executive Summary", "This scenario considers the public Asamarix website and its consultation workflow. It illustrates how an assessment would document a finding, explain its business impact, and assign remediation and retest ownership.", "The example finding concerns inquiry availability during periods of heavy submission traffic. Customer impact and severity would be assessed using actual observations during an authorized engagement."],
+        ["Scope and Rules of Engagement", "Illustrative in-scope assets: asamarix.com public pages and the same-origin /contact/ workflow. Out of scope: Cloudflare control plane, mailbox infrastructure, third-party services, and any undisclosed environments.", "Before an actual assessment, record the written authorization, approved hosts, dates, traffic limits, escalation contact and stop conditions. Agree on a test inbox and synthetic submission data."],
+        ["Assessment Coverage", "Document observations for page security headers, form validation and failure handling, protection against submission abuse, and handling of inquiry data. Record each area as tested, partially tested or excluded, with any limitations."],
+        ["Findings Overview", "WEB-01 | Consultation Submission Rate Controls Undocumented | Example severity: Medium | Status: Hypothetical"]
+      ],
+      [
+        ["WEB-01 | Consultation Submission Rate Controls Undocumented", "Illustrative affected component: consultation submission endpoint. Suggested owner: website operations. Example priority: Medium, subject to measured capacity and existing controls."],
+        ["Evidence Summary", "In this scenario, the team could not identify a documented request limit for inquiry submissions during the mock configuration review. No traffic was sent and no outage or quota impact was observed.", "For a real report, attach a sanitized evidence reference, timestamp, environment and reviewer. Record what the evidence establishes and any assumptions."],
+        ["Business Impact", "If sustained automated traffic reached the inquiry handler, it could consume capacity or interfere with legitimate inquiries. Email delivery may also be affected if downstream quotas are reached."],
+        ["Recommended Action", "Confirm which hostnames accept inquiries, apply a suitable submission rate limit where supported, and monitor throttling and delivery outcomes. Keep a direct email path available for legitimate prospects."],
+        ["Retest Criteria", "Confirm ordinary inquiries still complete, the agreed threshold behaves as designed in an authorized preview, and the fallback remains visible. Record the retest date, reviewer, result and remaining risk."],
+        ["Report Handover", "Review findings with the system owner. Record who accepted each action, the due date, and whether a follow-up is needed. Share any engagement evidence through the agreed private channel."]
+      ]
+    ]
+  },
+  {
+    "filename": "network-pentest-example.pdf",
+    "title": "Network Pentest Deliverable Example",
+    "service": "Network Penetration Testing",
+    "notice": "Fictional assessment. All systems and evidence are illustrative.",
+    "pages": [[
+      ["Executive Summary", "In this scenario, a warehouse office network and a management segment share a boundary that permits more access than operations requires."],
+      ["Scope and Limitations", "Review covers a synthetic office segment, a management segment and the approved internal management services. Internet-facing systems and wireless are excluded."],
+      ["NET-01 | Management Access Extends Beyond the Administrative Segment", "Example severity: High. Example evidence: approved connectivity records and firewall policy excerpts show management access from a general office segment. Owner: network operations."],
+      ["Business Impact and Remediation", "Broader management reachability increases the impact of an office endpoint compromise. Limit approved management access to an administrative segment, review exceptions and document ownership."],
+      ["Retest Criteria", "Confirm authorized administrators retain required access, general office systems lack management access, and approved access remains visible in logs."]
+    ]]
+  },
+  {
+    "filename": "application-pentest-example.pdf",
+    "title": "Application Pentest Deliverable Example",
+    "service": "Desktop Application Penetration Testing",
+    "notice": "Fictional assessment of a desktop client using synthetic records.",
+    "pages": [[
+      ["Executive Summary", "A desktop dispatch utility retains exported shipment summaries longer than the example organization requires."],
+      ["Scope and Limitations", "The example covers a Windows staging installation, two synthetic user profiles and the local export workflow. Server components and the production environment are excluded."],
+      ["APP-01 | Exported Records Persist on a Shared Workstation", "Example severity: Medium. Example evidence: the mock data handling review found export artifacts after the documented sign-out event. Owner: desktop application team."],
+      ["Business Impact and Remediation", "A shared workstation could retain sensitive operational data beyond its intended use. Minimize local storage and implement a documented cleanup policy for temporary exports."],
+      ["Retest Criteria", "Check retention and cleanup for each supported workflow. Verify users still have access to exports saved intentionally under the approved policy."]
+    ]]
+  },
+  {
+    "filename": "cloud-pentest-example.pdf",
+    "title": "Cloud Pentest Deliverable Example",
+    "service": "Cloud Penetration Testing",
+    "notice": "Fictional assessment of an isolated cloud staging environment.",
+    "pages": [[
+      ["Executive Summary", "The example environment assigns a deployment identity broader storage permissions than its documented function requires."],
+      ["Scope and Limitations", "Review covers an isolated staging account, its deployment identity and synthetic storage resources. Production and provider infrastructure are excluded."],
+      ["CLD-01 | Deployment Identity Has Excess Storage Permissions", "Example severity: High. Example evidence: reviewed policy and a synthetic permission report show access outside the deployment resource group. Owner: cloud platform engineering."],
+      ["Business Impact and Remediation", "A compromised deployment identity could expose additional environments or data. Restrict permissions to named resources, remove unused grants and verify audit logging."],
+      ["Retest Criteria", "Confirm a routine deployment succeeds, access outside the approved resources is denied, and expected access decisions appear in the audit record."]
+    ]]
+  },
+  {
+    "filename": "api-pentest-example.pdf",
+    "title": "API Pentest Deliverable Example",
+    "service": "API Penetration Testing",
+    "notice": "Fictional assessment of a shipment API with synthetic tenants.",
+    "pages": [[
+      ["Executive Summary", "The scenario illustrates a gap in tenant-level authorization that can affect the confidentiality of shipment records."],
+      ["Scope and Limitations", "An isolated staging API and two synthetic tenants are in scope. Integrations with real carriers and production credentials are excluded."],
+      ["API-01 | Tenant Authorization Is Inconsistent for Shipment Records", "Example severity: High. Example evidence: an approved test matrix shows a denied-by-design request received synthetic data. Owner: API engineering."],
+      ["Business Impact and Remediation", "A tenant could receive information intended for another customer. Apply server-side tenant checks consistently and add regression coverage for each affected record type."],
+      ["Retest Criteria", "Verify approved requests succeed, cross-tenant requests deny access without data disclosure, and authorization failures produce an appropriate audit event."]
+    ]]
+  },
+  {
+    "filename": "defensive-remediation-plan.pdf",
+    "title": "Defensive Security Remediation Plan",
+    "service": "Defensive Cybersecurity",
+    "notice": "Illustrative plan for a fictional operations team.",
+    "pages": [[
+      ["Objective", "Improve confidence in privileged access and incident visibility while protecting warehouse operating hours."],
+      ["Priority 1 | Confirm Privileged Access Ownership", "Owner: identity team. Week 1: reconcile administrator accounts with named owners, confirm MFA coverage and document emergency access. Completion evidence: approved inventory and exception list."],
+      ["Priority 2 | Verify Audit Coverage", "Owner: security operations. Week 2: confirm that privileged role changes and authentication events reach the central log destination. Completion evidence: representative events and retention settings."],
+      ["Priority 3 | Rehearse Incident Escalation", "Owner: operations lead. Week 3: run a tabletop exercise for suspicious privileged access. Completion evidence: timeline, decision log and assigned follow-up actions."]
+    ]]
+  },
+  {
+    "filename": "systems-maintenance-runbook.pdf",
+    "title": "Systems Maintenance Runbook",
+    "service": "Systems Administration",
+    "notice": "Illustrative runbook for a fictional staging service.",
+    "pages": [[
+      ["Change Summary", "Apply approved operating system updates to a staging integration service. The system owner approves the window and the administrator records each outcome."],
+      ["Pre-Change Checklist", "Confirm service health, current version, backup timestamp and recovery access. Record the expected downtime, downstream dependencies and escalation contact."],
+      ["Maintenance and Verification", "Apply the approved update during the maintenance window. Confirm the service returns to a healthy state. Check one synthetic business transaction, expected logs and downstream queue status."],
+      ["Rollback Decision", "Pause the rollout if the service fails to recover by the agreed checkpoint or if transactions start failing. Use the approved recovery process and verify service and data state before reopening traffic."],
+      ["Handover Record", "Capture versions, checks completed, exceptions, owner sign-off and follow-up monitoring tasks."]
+    ]]
+  },
+  {
+    "filename": "it-project-cutover-plan.pdf",
+    "title": "IT Project Cutover Plan",
+    "service": "IT Project Management",
+    "notice": "Illustrative plan for a fictional warehouse integration rollout.",
+    "pages": [[
+      ["Objective and Roles", "Switch a staging warehouse interface to a revised carrier mapping. The project lead coordinates the cutover. Operations owns business acceptance, and integration engineering owns deployment and rollback."],
+      ["Readiness Gates", "Confirm approved mappings, completed UAT, a named escalation contact, and an agreed reconciliation window. Record open risks and the final go/no-go decision."],
+      ["Cutover Sequence", "At T-30 minutes, confirm baseline volumes and notify stakeholders. At T0, apply the approved interface change. At T+15 minutes, reconcile initial synthetic transactions and record any exceptions."],
+      ["Rollback and Handover", "Roll back if reconciliation falls outside the agreed tolerance or a critical transaction fails. Verify the previous flow resumes, communicate the decision and document support ownership before handover."]
+    ]]
+  },
+  {
+    "filename": "integration-interface-specification.pdf",
+    "title": "Integration and Automation Specification",
+    "service": "Integration and Automation",
+    "notice": "Illustrative interface specification using synthetic shipment events.",
+    "pages": [[
+      ["Business Flow", "An approved warehouse shipment status event is sent to a fictional carrier adapter. Operations reconciles events that cannot be delivered."],
+      ["Field Mapping", "Event ID becomes the deduplication key. Shipment reference identifies the shipment. Status is mapped from the approved status table. Event time is normalized to UTC."],
+      ["Failure Handling", "Reject invalid mappings with a reason code. Retry temporary delivery errors within the agreed policy. Route unresolved events to an operator review queue and preserve the original event identifier for reconciliation."],
+      ["Acceptance Criteria", "Verify normal delivery, duplicate suppression, recovery from one temporary failure and operator review for an unmapped status. Capture results against synthetic records and document support ownership."]
+    ]]
+  }
+]

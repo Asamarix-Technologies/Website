@@ -65,13 +65,13 @@ p { color: var(--slate); }
 }
 .hero h1 span { color: var(--blue); }
 .hero .button { margin-top: 1.6rem; }
-.hero-panel, .form-panel {
+.form-panel {
   border: 1px solid var(--line);
   border-radius: .65rem;
   background: var(--white);
   padding: clamp(1.15rem, 3vw, 2rem);
 }
-.hero-panel h2, .service-index h2 { margin-bottom: .7rem; font-size: 1.15rem; letter-spacing: -.01em; }
+.service-index h2 { margin-bottom: .7rem; font-size: 1.15rem; letter-spacing: -.01em; }
 .service-links { padding: 0; margin: 0; list-style: none; }
 .service-links li { border-top: 1px solid var(--line); }
 .service-links a {
@@ -109,11 +109,22 @@ p { color: var(--slate); }
 .service-list section { padding-bottom: 1.6rem; margin-bottom: 1.65rem; border-bottom: 1px solid var(--line); scroll-margin-top: 1.25rem; }
 .deliverables { padding-inline-start: 1.25rem; color: var(--slate); }
 .deliverables li + li { margin-top: .25rem; }
-.report { max-width: 49rem; }
-.report h2:not(:first-child) { margin-top: 2rem; }
-.report-details { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: .25rem 1rem; }
-.report-details dt { font-weight: 650; }
-.report-details dd { margin: 0; color: var(--slate); }
+.hero-brand {
+  width: 100%;
+  padding: clamp(.75rem, 2vw, 1.3rem);
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+  background: var(--white);
+}
+.hero-brand img { display: block; width: 100%; height: auto; }
+.home-services { border-bottom: 1px solid var(--line); }
+.home-services h2 { margin-bottom: 1rem; }
+.home-services .service-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+  gap: .35rem 1.5rem;
+}
+.file-note { margin-top: .7rem; }
 
 .founder { align-items: center; }
 .founder figure { max-width: 26rem; }
@@ -148,6 +159,7 @@ button.button { border: 0; cursor: pointer; font: inherit; font-weight: 650; }
 @media (max-width: 48rem) {
   .hero-inner, .split, .founder, .service-layout, .contact-layout { grid-template-columns: minmax(0, 1fr); }
   .wrap { width: calc(100% - 2rem); }
+  .hero-brand { max-width: 30rem; justify-self: center; }
   .header-inner { padding-bottom: .6rem; }
   .wordmark-crop { width: 8.5rem; }
 }
