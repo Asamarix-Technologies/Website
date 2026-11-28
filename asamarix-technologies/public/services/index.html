@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cybersecurity, systems integration, and automation consulting services.">
+  <meta name="description" content="Explore penetration testing, defensive cybersecurity, systems administration, IT project management, and integrations.">
   <meta name="referrer" content="no-referrer">
   <meta name="color-scheme" content="light">
   <title>Services | Asamarix Technologies</title>
@@ -14,9 +14,12 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="wordmark" href="/" aria-label="Asamarix Technologies home">
-        <img src="/assets/Asamarix_Logo.png" alt="Asamarix Technologies">
+        <span class="wordmark-crop">
+          <img src="/assets/Asamarix_Logo.png" width="576" height="384" alt="Asamarix Technologies">
+        </span>
       </a>
       <nav aria-label="Main navigation">
+        <a href="/">Home</a>
         <a href="/services/" aria-current="page">Services</a>
         <a href="/about/">About</a>
         <a href="/projects/">Projects</a>
@@ -25,32 +28,118 @@
     </div>
   </header>
   <main id="main" tabindex="-1">
-    <div class="wrap page">
-      <header class="page-heading">
+    <header class="page-intro">
+      <div class="wrap">
         <h1>Services</h1>
-        <p class="lede">Asamarix helps businesses assess risk and improve the systems they rely on every day.</p>
-      </header>
-      <div class="service-list">
-        <section>
-          <h2>Cybersecurity consulting</h2>
-          <p>Review system configurations and workflows, identify gaps, and prioritize remediation.</p>
-        </section>
-        <section>
-          <h2>Systems integration</h2>
-          <p>Map data flows and plan API and EDI connections across warehouse systems, carrier platforms, and business tools.</p>
-        </section>
-        <section>
-          <h2>Workflow automation</h2>
-          <p>Improve repetitive spreadsheet work and manual handoffs with tools your team can maintain.</p>
-        </section>
+        <p class="lede">Start with an assessment, a specific operational problem, or a project that needs technical coordination. We define the scope and expected deliverables with you before work begins.</p>
+        <p class="file-note">Deliverable examples are PDFs and open in a new tab.</p>
       </div>
-      <a class="button" href="/contact/">Discuss your project</a>
+    </header>
+    <div class="wrap section service-layout">
+      <aside class="service-index" aria-label="Services on this page">
+        <h2>On This Page</h2>
+        <ul class="service-links">
+          <li><a href="#penetration-testing">Penetration Testing</a></li>
+          <li><a href="#defensive-security">Defensive Cybersecurity</a></li>
+          <li><a href="#systems-administration">Systems Administration</a></li>
+          <li><a href="#it-project-management">IT Project Management</a></li>
+          <li><a href="#integration">Integration and Automation</a></li>
+        </ul>
+      </aside>
+      <div class="service-list">
+        <section id="penetration-testing" class="prose">
+          <h2>Penetration Testing</h2>
+          <p>Assess agreed web applications, APIs, or network assets to understand which security weaknesses could expose sensitive data or business functions. Engagements begin with written authorization, an agreed asset list, testing windows, and escalation contacts.</p>
+          <h3>Typical Deliverables</h3>
+          <ul class="deliverables">
+            <li>Executive Summary</li>
+            <li>Prioritized Technical Findings with Evidence and Remediation Advice</li>
+            <li>Walkthrough with System Owners</li>
+            <li>Retesting Plan</li>
+          </ul>
+          <h3>Deliverable Examples</h3>
+          <p>These hypothetical reports illustrate web application, network, desktop application, cloud, and API assessments.</p>
+          <ul class="deliverables">
+            <li><a href="/deliverables/asamarix-com-pentest-report.pdf" target="_blank" rel="noopener">Asamarix.com Pentest Report (PDF)</a></li>
+            <li><a href="/deliverables/network-pentest-example.pdf" target="_blank" rel="noopener">Network Pentest Report (PDF)</a></li>
+            <li><a href="/deliverables/application-pentest-example.pdf" target="_blank" rel="noopener">Desktop Application Pentest Report (PDF)</a></li>
+            <li><a href="/deliverables/cloud-pentest-example.pdf" target="_blank" rel="noopener">Cloud Pentest Report (PDF)</a></li>
+            <li><a href="/deliverables/api-pentest-example.pdf" target="_blank" rel="noopener">API Pentest Report (PDF)</a></li>
+          </ul>
+        </section>
+        <section id="defensive-security" class="prose">
+          <h2>Defensive Cybersecurity</h2>
+          <p>Review the controls your team uses to prevent, detect, and respond to incidents. Work can cover identity and access, configuration baselines, patching, logging coverage, and incident procedures.</p>
+          <h3>Typical Deliverables</h3>
+          <ul class="deliverables">
+            <li>Prioritized Remediation Plan</li>
+            <li>Configuration Guidance</li>
+            <li>Runbook Updates</li>
+          </ul>
+          <h3>Deliverable Examples</h3>
+          <ul class="deliverables">
+            <li><a href="/deliverables/defensive-remediation-plan.pdf" target="_blank" rel="noopener">Defensive Security Remediation Plan (PDF)</a></li>
+          </ul>
+        </section>
+        <section id="systems-administration" class="prose">
+          <h2>Systems Administration</h2>
+          <p>Help maintain reliable Windows and Linux environments through account and permission reviews, patch planning, service configuration, and backup and recovery checks.</p>
+          <h3>Typical Deliverables</h3>
+          <ul class="deliverables">
+            <li>An inventory of the systems in scope</li>
+            <li>Agreed maintenance tasks</li>
+            <li>Documented changes</li>
+            <li>A handover with verification and recovery steps</li>
+          </ul>
+          <h3>Deliverable Examples</h3>
+          <ul class="deliverables">
+            <li><a href="/deliverables/systems-maintenance-runbook.pdf" target="_blank" rel="noopener">Systems Maintenance Runbook (PDF)</a></li>
+          </ul>
+        </section>
+        <section id="it-project-management" class="prose">
+          <h2>IT Project Management</h2>
+          <p>Coordinate implementations across business owners, vendors, and technical teams. We help turn requirements into milestones, track dependencies, and plan integration testing, user acceptance testing, and cutover.</p>
+          <h3>Typical Deliverables</h3>
+          <ul class="deliverables">
+            <li>A project plan</li>
+            <li>Risk and decision tracking</li>
+            <li>Launch readiness criteria</li>
+            <li>A transition plan for production support</li>
+          </ul>
+          <h3>Deliverable Examples</h3>
+          <ul class="deliverables">
+            <li><a href="/deliverables/it-project-cutover-plan.pdf" target="_blank" rel="noopener">IT Project Cutover Plan (PDF)</a></li>
+          </ul>
+        </section>
+        <section id="integration" class="prose">
+          <h2>Integration and Automation</h2>
+          <p>Connect warehouse systems, carrier platforms, and business tools through API or EDI integrations. For recurring manual work, we map inputs, approvals, and exceptions before designing an automation.</p>
+          <h3>Typical Deliverables</h3>
+          <ul class="deliverables">
+            <li>Interface mappings</li>
+            <li>Test scenarios</li>
+            <li>Exception handling</li>
+            <li>Operating instructions for the people who will maintain the workflow</li>
+          </ul>
+          <h3>Deliverable Examples</h3>
+          <ul class="deliverables">
+            <li><a href="/deliverables/integration-interface-specification.pdf" target="_blank" rel="noopener">Integration and Automation Specification (PDF)</a></li>
+          </ul>
+        </section>
+        <a class="button" href="/contact/">Discuss your project</a>
+      </div>
     </div>
   </main>
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span>Asamarix Technologies</span>
-      <a href="/contact/">Contact</a>
+      <a class="footer-brand" href="/">Asamarix Technologies</a>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/about/">About</a>
+        <a href="/projects/">Projects</a>
+        <a href="/contact/">Contact</a>
+      </nav>
     </div>
   </footer>
 </body>

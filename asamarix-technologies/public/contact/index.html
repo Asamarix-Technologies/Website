@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Consultation inquiries for Asamarix Technologies.">
+  <meta name="description" content="Contact Asamarix Technologies about a security or IT engagement.">
   <meta name="color-scheme" content="light">
   <title>Request a consultation | Asamarix Technologies</title>
   <link rel="stylesheet" href="/assets/site.css">
@@ -14,9 +14,12 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="wordmark" href="/" aria-label="Asamarix Technologies home">
-        <img src="/assets/Asamarix_Logo.png" alt="Asamarix Technologies">
+        <span class="wordmark-crop">
+          <img src="/assets/Asamarix_Logo.png" width="576" height="384" alt="Asamarix Technologies">
+        </span>
       </a>
       <nav aria-label="Main navigation">
+        <a href="/">Home</a>
         <a href="/services/">Services</a>
         <a href="/about/">About</a>
         <a href="/projects/">Projects</a>
@@ -25,24 +28,29 @@
     </div>
   </header>
   <main id="main" tabindex="-1">
-    <div class="wrap consultation">
-      <header class="consultation-intro">
-        <h1>Request a consultation</h1>
-        <p class="lede">Tell us what you’re planning. We’ll review the scope and reply by email to discuss next steps.</p>
-        <div class="consultation-help">
-          <h2>What to include</h2>
-          <p>Describe the outcome you want, the systems involved, and any deadlines or constraints. For a security assessment, share the type of system and approximate scope.</p>
-          <p>Prefer email? <a href="mailto:contact@asamarix.com">contact@asamarix.com</a></p>
-        </div>
-      </header>
-      <div class="consultation-panel">
+    <header class="page-intro">
+      <div class="wrap">
+        <h1>Contact Asamarix</h1>
+        <p class="lede">Tell us what you need help with and what you want the engagement to accomplish.</p>
+      </div>
+    </header>
+    <div class="wrap section contact-layout">
+      <aside class="contact-sidebar prose">
+        <h2>Before You Reach Out</h2>
+        <p>For penetration testing, a general description of the application or environment is enough for a first conversation. For IT projects, share the milestone or operational problem you’re working toward.</p>
+        <h3>Email</h3>
+        <a href="mailto:contact@asamarix.com">contact@asamarix.com</a>
+        <h3>Inquiry Privacy</h3>
+        <p>We collect the contact details and project information you submit to evaluate and respond to your inquiry. Cloudflare provides the form’s spam check and email delivery. Your inquiry is sent to the Asamarix inbox for follow-up.</p>
+      </aside>
+      <div class="form-panel consultation-panel">
         <p id="form-offline">The online form is currently unavailable. Please use the email address on this page.</p>
         <form id="contact-form" action="/contact/" method="post" accept-charset="UTF-8" hidden>
           <p class="consultation-note">All fields are required unless marked optional.</p>
           <fieldset id="contact-fields" disabled>
             <legend class="consultation-sr">Consultation inquiry</legend>
             <section class="consultation-section" aria-labelledby="contact-details">
-              <h2 id="contact-details">Contact details</h2>
+              <h2 id="contact-details">Contact Details</h2>
               <div class="consultation-fields">
                 <div>
                   <label for="kind">Requesting as</label>
@@ -67,13 +75,16 @@
               </div>
             </section>
             <section class="consultation-section" aria-labelledby="project-details">
-              <h2 id="project-details">Project details</h2>
+              <h2 id="project-details">Project Details</h2>
               <div class="consultation-fields">
                 <div>
                   <label for="service">Service area</label>
                   <select id="service" name="service" required>
                     <option value="">Select a service</option>
-                    <option value="security">Cybersecurity consulting or assessment</option>
+                    <option value="penetration-testing">Penetration testing</option>
+                    <option value="defensive-security">Defensive cybersecurity</option>
+                    <option value="systems-administration">Systems administration</option>
+                    <option value="it-project-management">IT project management</option>
                     <option value="integration">Systems integration</option>
                     <option value="automation">Workflow automation</option>
                     <option value="unsure">Other or unsure</option>
@@ -107,8 +118,14 @@
   </main>
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span>Asamarix Technologies</span>
-      <a href="/contact/">Contact</a>
+      <a class="footer-brand" href="/">Asamarix Technologies</a>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/about/">About</a>
+        <a href="/projects/">Projects</a>
+        <a href="/contact/">Contact</a>
+      </nav>
     </div>
   </footer>
 </body>

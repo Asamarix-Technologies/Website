@@ -1,0 +1,2575 @@
+[
+  {
+    "id": "ASX-WEB-01",
+    "title": "Asamarix.com Pentest Report",
+    "filename": "asamarix-com-pentest-report.pdf",
+    "service": "Web Application Assessment",
+    "kind": "Assessment",
+    "pages": [
+      {
+        "category": "Engagement Brief",
+        "title": "Asamarix.com Pentest Report",
+        "intro": "A synthetic staging review models a consultation workflow with a limited delivery allowance and no recorded per-source limit. Repeated requests could delay new inquiries. The team can address the availability risk at the edge and keep a direct email route available.",
+        "blocks": [
+          {
+            "type": "metrics",
+            "items": [
+              [
+                "Local Priority",
+                "4/9 · Moderate"
+              ],
+              [
+                "CVSS v3.1 Base",
+                "5.3 Medium"
+              ],
+              [
+                "Finding Status",
+                "Open · example"
+              ]
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Decision Requested",
+            "body": "Approve a bounded submission policy before the next outreach campaign."
+          },
+          {
+            "type": "table",
+            "title": "Engagement Record",
+            "columns": [
+              "Field",
+              "Recorded value"
+            ],
+            "rows": [
+              [
+                "Subject",
+                "Asamarix.com • hypothetical inquiry workflow"
+              ],
+              [
+                "Report / finding",
+                "ASX-WEB-01 / WEB-01"
+              ],
+              [
+                "Accountable owner",
+                "Web operations"
+              ],
+              [
+                "Decision window",
+                "Before campaign launch"
+              ],
+              [
+                "Distribution",
+                "Public training edition • synthetic evidence; no live assessment"
+              ]
+            ],
+            "widths": [
+              0.28,
+              0.72
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Impact Rationale",
+            "body": "Assume a publicly reachable form, partial service degradation only, and an existing challenge plus email fallback. Actual quota, traffic mix and edge rules would materially change this judgment."
+          },
+          {
+            "type": "text",
+            "title": "Decision Gate",
+            "body": "Approve the quota and fallback in the campaign readiness review."
+          },
+          {
+            "type": "bars",
+            "title": "Severity and Business Priority",
+            "rows": [
+              [
+                "CVSS v3.1 base severity",
+                5.3,
+                10
+              ],
+              [
+                "Asamarix local risk index",
+                4,
+                9
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Scope and Assurance",
+        "title": "Coverage and Evidence",
+        "intro": "Confirm the decision on inquiry capacity before the campaign begins.",
+        "blocks": [
+          {
+            "type": "text",
+            "title": "In Scope",
+            "body": "Public content, contact form configuration and a synthetic delivery queue. Read-only review plus one modeled legitimate request."
+          },
+          {
+            "type": "text",
+            "title": "Excluded",
+            "body": "Live asamarix.com, live mail, provider infrastructure and traffic generation."
+          },
+          {
+            "type": "table",
+            "title": "Coverage Matrix",
+            "columns": [
+              "Boundary",
+              "Review method",
+              "Example result"
+            ],
+            "rows": [
+              [
+                "Public pages",
+                "Static response-policy review",
+                "Expected restrictive baseline in fixture"
+              ],
+              [
+                "Inquiry path",
+                "Form configuration and queue policy",
+                "Customer-facing limit missing in fixture"
+              ],
+              [
+                "Delivery",
+                "Synthetic handoff record",
+                "Inbox receipt outside scope"
+              ]
+            ],
+            "widths": [
+              0.24,
+              0.31,
+              0.45
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Evidence Register",
+            "columns": [
+              "ID",
+              "Source",
+              "Illustrative observation",
+              "Limitation"
+            ],
+            "rows": [
+              [
+                "WEB-E1",
+                "Policy register",
+                "No matching budget for consultation submissions.",
+                "Configuration review only"
+              ],
+              [
+                "WEB-E2",
+                "Queue fixture",
+                "One accepted inquiry consumes one allowance unit.",
+                "No volume or outage measurement"
+              ]
+            ],
+            "widths": [
+              0.13,
+              0.21,
+              0.39,
+              0.27
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Evidence Confidence",
+            "body": "A low-volume fixture establishes the delivery dependency. Typical arrival rates and provider ceilings are unknown."
+          }
+        ]
+      },
+      {
+        "category": "Technical Record",
+        "title": "Inquiry Capacity Has No Defined Per-Source Limit",
+        "intro": "WEB-01   /   Open, illustrative   /   Owner • Web operations   /   Evidence • WEB-E1, WEB-E2",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Risk and Applicability",
+            "columns": [
+              "Measure",
+              "Assessment"
+            ],
+            "rows": [
+              [
+                "CVSS v3.1 Base",
+                "5.3 Medium • Illustrative analyst-assigned base score using the stated effects."
+              ],
+              [
+                "Vector",
+                "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+              ],
+              [
+                "CVE",
+                "No assigned CVE. This example describes a site-specific design or policy condition."
+              ],
+              [
+                "EPSS probability",
+                "N/A • No published CVE for FIRST to score."
+              ],
+              [
+                "Engagement risk",
+                "L2 (10–40%) × I2 = 4/9 • Moderate. Assume a publicly reachable form, partial service degradation only, and an existing challenge plus email fallback. Actual quota, traffic mix and edge rules would materially change this judgment."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.73
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Framework Traceability",
+            "columns": [
+              "Framework",
+              "Reference",
+              "Connection to this finding"
+            ],
+            "rows": [
+              [
+                "MITRE ATT&CK",
+                "T1499.003 • Application Exhaustion Flood",
+                "Threat scenario for a publicly callable resource."
+              ],
+              [
+                "OWASP",
+                "API4:2023 • Unrestricted Resource Consumption",
+                "Use to review request and provider budgets."
+              ],
+              [
+                "PTES",
+                "Reporting • executive and technical records",
+                "Link the decision brief to scoped evidence, risk, remediation and retest criteria."
+              ]
+            ],
+            "widths": [
+              0.22,
+              0.34,
+              0.44
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Scoring Convention",
+            "body": "Local planning model: estimate at least one material impact over 90 days, assuming current controls. L1 below 10%, L2 10–40%, L3 above 40%. These bands are illustrative analyst judgments. I1 is limited rework, I2 a service disruption or limited disclosure, I3 a material business interruption or sensitive exposure. L × I: 1–2 Low, 3–4 Moderate, 6 High, 9 Critical."
+          }
+        ]
+      },
+      {
+        "category": "Remediation and Retest",
+        "title": "Decision and Closure Record",
+        "intro": "Close the finding when the accountable owner supplies the evidence below and an independent reviewer accepts the result.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Action Register",
+            "columns": [
+              "Action",
+              "Owner",
+              "Evidence required"
+            ],
+            "rows": [
+              [
+                "Define a submission budget",
+                "Web operations",
+                "Review normal volumes, legitimate bursts and fallback."
+              ],
+              [
+                "Apply and observe",
+                "Platform owner",
+                "Stage the rule and review legitimate rejection counts."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.24,
+              0.49
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Retest Worksheet",
+            "columns": [
+              "Acceptance gate",
+              "Pass condition"
+            ],
+            "rows": [
+              [
+                "Ordinary inquiry",
+                "Accepted through agreed preview workflow."
+              ],
+              [
+                "Threshold control",
+                "Policy and counters match the approved limit in an isolated fixture."
+              ],
+              [
+                "Fallback",
+                "Published mail contact remains accessible."
+              ]
+            ],
+            "widths": [
+              0.34,
+              0.66
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Disposition",
+            "body": "Example status: open. Record the change ID, retest date, reviewer, evidence reference, residual risk and acceptance signature in the working template."
+          },
+          {
+            "type": "links",
+            "title": "Source References",
+            "items": [
+              [
+                "MITRE ATT&CK • T1499.003 Application Exhaustion Flood",
+                "https://attack.mitre.org/techniques/T1499/003/"
+              ],
+              [
+                "OWASP • API4:2023 Resource Consumption",
+                "https://owasp.org/API-Security/editions/2023/en/0xa4-unrestricted-resource-consumption/"
+              ],
+              [
+                "PTES • Reporting",
+                "https://pentest-standard.readthedocs.io/en/latest/reporting.html"
+              ],
+              [
+                "FIRST • CVSS v3.1 specification",
+                "https://www.first.org/cvss/v3.1/specification-document"
+              ],
+              [
+                "FIRST • EPSS model and interpretation",
+                "https://www.first.org/epss/"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ASX-NET-01",
+    "title": "Network Pentest Report",
+    "filename": "network-pentest-example.pdf",
+    "service": "Network Assessment",
+    "kind": "Assessment",
+    "pages": [
+      {
+        "category": "Engagement Brief",
+        "title": "Network Pentest Report",
+        "intro": "A fictional appliance inventory and vendor mapping identify an affected OpenSSL build in a certificate-handling service. A service interruption would delay dispatch messages until failover. The patch decision depends on the deployed image and vendor backport status.",
+        "blocks": [
+          {
+            "type": "metrics",
+            "items": [
+              [
+                "Local Priority",
+                "6/9 · High"
+              ],
+              [
+                "CVSS v3.1 Base",
+                "7.5 High"
+              ],
+              [
+                "Finding Status",
+                "Open · example"
+              ]
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Decision Requested",
+            "body": "Schedule a gateway image update and approve a failover rehearsal."
+          },
+          {
+            "type": "table",
+            "title": "Engagement Record",
+            "columns": [
+              "Field",
+              "Recorded value"
+            ],
+            "rows": [
+              [
+                "Subject",
+                "North Yard • synthetic gateway segment"
+              ],
+              [
+                "Report / finding",
+                "ASX-NET-01 / NET-01"
+              ],
+              [
+                "Accountable owner",
+                "Network engineering"
+              ],
+              [
+                "Decision window",
+                "Next approved network window"
+              ],
+              [
+                "Distribution",
+                "Public training edition • synthetic evidence; no live assessment"
+              ]
+            ],
+            "widths": [
+              0.28,
+              0.72
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Impact Rationale",
+            "body": "Assume an exposed certificate-processing service, no vendor backport and one standby gateway. Loss of the active node would interrupt dispatch until failover."
+          },
+          {
+            "type": "text",
+            "title": "Decision Gate",
+            "body": "Decide after vendor confirmation and before reserving the maintenance window."
+          },
+          {
+            "type": "bars",
+            "title": "Severity and Business Priority",
+            "rows": [
+              [
+                "CVSS v3.1 base severity",
+                7.5,
+                10
+              ],
+              [
+                "Asamarix local risk index",
+                6,
+                9
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Scope and Assurance",
+        "title": "Coverage and Evidence",
+        "intro": "Decide whether to use the next gateway change window.",
+        "blocks": [
+          {
+            "type": "text",
+            "title": "In Scope",
+            "body": "Staging gateway pair, management boundary and failover records. Match sample image manifest to the vendor advisory."
+          },
+          {
+            "type": "text",
+            "title": "Excluded",
+            "body": "Production gateways, carrier circuits, third-party networks and traffic stress testing."
+          },
+          {
+            "type": "table",
+            "title": "Coverage Matrix",
+            "columns": [
+              "Boundary",
+              "Review method",
+              "Example result"
+            ],
+            "rows": [
+              [
+                "Office to management",
+                "Approved flow matrix",
+                "Management access limited to jump segment"
+              ],
+              [
+                "Gateway listener",
+                "Inventory / vendor comparison",
+                "Affected TLS component modeled"
+              ],
+              [
+                "Gateway pair",
+                "Failover record review",
+                "Last health check lacks a business transaction"
+              ]
+            ],
+            "widths": [
+              0.24,
+              0.31,
+              0.45
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Evidence Register",
+            "columns": [
+              "ID",
+              "Source",
+              "Illustrative observation",
+              "Limitation"
+            ],
+            "rows": [
+              [
+                "NET-E1",
+                "Image manifest",
+                "Training image lists OpenSSL 1.1.1m, assumed unpatched.",
+                "Confirm vendor backports"
+              ],
+              [
+                "NET-E2",
+                "Dependency register",
+                "Certificate parsing occurs in the gateway process.",
+                "No disruption observed"
+              ]
+            ],
+            "widths": [
+              0.13,
+              0.21,
+              0.39,
+              0.27
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Evidence Confidence",
+            "body": "The manifest supports component identification. A vendor backport or a different certificate-processing path would change applicability."
+          }
+        ]
+      },
+      {
+        "category": "Technical Record",
+        "title": "Gateway Image Contains an Affected TLS Library",
+        "intro": "NET-01   /   Open, illustrative   /   Owner • Network engineering   /   Evidence • NET-E1, NET-E2",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Risk and Applicability",
+            "columns": [
+              "Measure",
+              "Assessment"
+            ],
+            "rows": [
+              [
+                "CVSS v3.1 Base",
+                "7.5 High • NVD published base score."
+              ],
+              [
+                "Vector",
+                "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+              ],
+              [
+                "CVE",
+                "CVE-2022-0778 • Candidate match in the fictional inventory. Verify the deployed image, affected library path and vendor backport status."
+              ],
+              [
+                "EPSS probability",
+                "4.625% from FIRST on 1 Jan 2025. Historical 30-day probability of exploitation activity for this CVE across the ecosystem. Refresh the dated value for each engagement."
+              ],
+              [
+                "Engagement risk",
+                "L2 (10–40%) × I3 = 6/9 • High. Assume an exposed certificate-processing service, no vendor backport and one standby gateway. Loss of the active node would interrupt dispatch until failover."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.73
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Framework Traceability",
+            "columns": [
+              "Framework",
+              "Reference",
+              "Connection to this finding"
+            ],
+            "rows": [
+              [
+                "MITRE ATT&CK",
+                "T1499 • Endpoint Denial of Service",
+                "Availability impact on a gateway node."
+              ],
+              [
+                "OWASP",
+                "A06:2021 • Vulnerable and Outdated Components",
+                "Supporting dependency-lifecycle lens for the gateway service."
+              ],
+              [
+                "PTES",
+                "Reporting • executive and technical records",
+                "Link the decision brief to scoped evidence, risk, remediation and retest criteria."
+              ]
+            ],
+            "widths": [
+              0.22,
+              0.34,
+              0.44
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Scoring Convention",
+            "body": "Local planning model: estimate at least one material impact over 90 days, assuming current controls. L1 below 10%, L2 10–40%, L3 above 40%. These bands are illustrative analyst judgments. I1 is limited rework, I2 a service disruption or limited disclosure, I3 a material business interruption or sensitive exposure. L × I: 1–2 Low, 3–4 Moderate, 6 High, 9 Critical."
+          }
+        ]
+      },
+      {
+        "category": "Remediation and Retest",
+        "title": "Decision and Closure Record",
+        "intro": "Close the finding when the accountable owner supplies the evidence below and an independent reviewer accepts the result.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Action Register",
+            "columns": [
+              "Action",
+              "Owner",
+              "Evidence required"
+            ],
+            "rows": [
+              [
+                "Resolve image applicability",
+                "Network engineer",
+                "Record image digest and vendor backport statement."
+              ],
+              [
+                "Stage a supported image",
+                "Change owner",
+                "Rehearse failover; retain last known good image."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.24,
+              0.49
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Retest Worksheet",
+            "columns": [
+              "Acceptance gate",
+              "Pass condition"
+            ],
+            "rows": [
+              [
+                "Version gate",
+                "Signed manifest maps to a vendor-fixed build."
+              ],
+              [
+                "Path gate",
+                "Synthetic dispatch reaches the upstream queue."
+              ],
+              [
+                "Resilience gate",
+                "Standby takes over within the agreed recovery objective."
+              ]
+            ],
+            "widths": [
+              0.34,
+              0.66
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Disposition",
+            "body": "Example status: open. Record the change ID, retest date, reviewer, evidence reference, residual risk and acceptance signature in the working template."
+          },
+          {
+            "type": "links",
+            "title": "Source References",
+            "items": [
+              [
+                "MITRE ATT&CK • T1499 Endpoint Denial of Service",
+                "https://attack.mitre.org/techniques/T1499/"
+              ],
+              [
+                "OWASP • A06:2021 Component Risk",
+                "https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/"
+              ],
+              [
+                "PTES • Reporting",
+                "https://pentest-standard.readthedocs.io/en/latest/reporting.html"
+              ],
+              [
+                "FIRST • CVSS v3.1 specification",
+                "https://www.first.org/cvss/v3.1/specification-document"
+              ],
+              [
+                "FIRST • EPSS model and interpretation",
+                "https://www.first.org/epss/"
+              ],
+              [
+                "NVD • CVE-2022-0778",
+                "https://nvd.nist.gov/vuln/detail/CVE-2022-0778"
+              ],
+              [
+                "FIRST • CVE-2022-0778 dated EPSS • 1 Jan 2025",
+                "https://api.first.org/data/v1/epss?cve=CVE-2022-0778&date=2025-01-01"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ASX-APP-01",
+    "title": "Desktop Application Pentest Report",
+    "filename": "application-pentest-example.pdf",
+    "service": "Desktop Application Assessment",
+    "kind": "Assessment",
+    "pages": [
+      {
+        "category": "Engagement Brief",
+        "title": "Desktop Application Pentest Report",
+        "intro": "A packaging review models a zlib advisory in a desktop export component. A failure could interrupt label preparation. The signed installer and restricted input sources limit exposure, and operations can use a manual export while engineering confirms applicability.",
+        "blocks": [
+          {
+            "type": "metrics",
+            "items": [
+              [
+                "Local Priority",
+                "2/9 · Low"
+              ],
+              [
+                "CVSS v3.1 Base",
+                "7.5 High"
+              ],
+              [
+                "Finding Status",
+                "Open · example"
+              ]
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Decision Requested",
+            "body": "Approve a dependency update and a focused regression test before release."
+          },
+          {
+            "type": "table",
+            "title": "Engagement Record",
+            "columns": [
+              "Field",
+              "Recorded value"
+            ],
+            "rows": [
+              [
+                "Subject",
+                "Dispatch Desk • synthetic Windows release"
+              ],
+              [
+                "Report / finding",
+                "ASX-APP-01 / APP-01"
+              ],
+              [
+                "Accountable owner",
+                "Desktop release engineering"
+              ],
+              [
+                "Decision window",
+                "Before the next installer is signed"
+              ],
+              [
+                "Distribution",
+                "Public training edition • synthetic evidence; no live assessment"
+              ]
+            ],
+            "widths": [
+              0.28,
+              0.72
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Impact Rationale",
+            "body": "Assume a signed desktop package and constrained input sources. The operations team can use a manual export while engineering rebuilds the installer. The published base vector is retained for comparability."
+          },
+          {
+            "type": "text",
+            "title": "Decision Gate",
+            "body": "Confirm the shipped configuration before signing the next desktop release."
+          },
+          {
+            "type": "bars",
+            "title": "Severity and Business Priority",
+            "rows": [
+              [
+                "CVSS v3.1 base severity",
+                7.5,
+                10
+              ],
+              [
+                "Asamarix local risk index",
+                2,
+                9
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Scope and Assurance",
+        "title": "Coverage and Evidence",
+        "intro": "Determine whether the release owner should rebuild the desktop installer.",
+        "blocks": [
+          {
+            "type": "text",
+            "title": "In Scope",
+            "body": "Synthetic Windows installer, bundled libraries and local export lifecycle. Review package provenance and signed build inventory."
+          },
+          {
+            "type": "text",
+            "title": "Excluded",
+            "body": "Production workstations, server-side APIs, crash reproduction and real shipment exports."
+          },
+          {
+            "type": "table",
+            "title": "Coverage Matrix",
+            "columns": [
+              "Boundary",
+              "Review method",
+              "Example result"
+            ],
+            "rows": [
+              [
+                "Installer",
+                "Signed build manifest",
+                "Component identity available"
+              ],
+              [
+                "Export path",
+                "Design and dependency inventory",
+                "Affected compression library in scope"
+              ],
+              [
+                "Shared profile",
+                "Synthetic cleanup record",
+                "Temporary file removed after successful export"
+              ]
+            ],
+            "widths": [
+              0.24,
+              0.31,
+              0.45
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Evidence Register",
+            "columns": [
+              "ID",
+              "Source",
+              "Illustrative observation",
+              "Limitation"
+            ],
+            "rows": [
+              [
+                "APP-E1",
+                "Software bill of materials",
+                "Training installer lists zlib 1.2.11 with no modeled backport.",
+                "Manifest requires vendor confirmation"
+              ],
+              [
+                "APP-E2",
+                "Export design",
+                "Export path compresses locally generated records.",
+                "Confirm the affected compression configuration in the shipped build."
+              ]
+            ],
+            "widths": [
+              0.13,
+              0.21,
+              0.39,
+              0.27
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Evidence Confidence",
+            "body": "The manifest identifies the library. The affected compression configuration and the shipped binary still need vendor confirmation."
+          }
+        ]
+      },
+      {
+        "category": "Technical Record",
+        "title": "Desktop Export Package Requires Advisory Review",
+        "intro": "APP-01   /   Open, illustrative   /   Owner • Desktop release engineering   /   Evidence • APP-E1, APP-E2",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Risk and Applicability",
+            "columns": [
+              "Measure",
+              "Assessment"
+            ],
+            "rows": [
+              [
+                "CVSS v3.1 Base",
+                "7.5 High • NVD published base score."
+              ],
+              [
+                "Vector",
+                "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+              ],
+              [
+                "CVE",
+                "CVE-2018-25032 • Candidate match for the example inventory. Confirm the affected compression configuration and vendor fixes before treating the shipped application as vulnerable."
+              ],
+              [
+                "EPSS probability",
+                "0.476% from FIRST on 1 Jan 2025. Historical 30-day probability of exploitation activity for this CVE across the ecosystem. Refresh the dated value for each engagement."
+              ],
+              [
+                "Engagement risk",
+                "L1 (<10%) × I2 = 2/9 • Low. Assume a signed desktop package and constrained input sources. The operations team can use a manual export while engineering rebuilds the installer. The published base vector is retained for comparability."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.73
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Framework Traceability",
+            "columns": [
+              "Framework",
+              "Reference",
+              "Connection to this finding"
+            ],
+            "rows": [
+              [
+                "MITRE CWE",
+                "CWE-787 • Out-of-bounds Write",
+                "Weakness classification of the published component issue."
+              ],
+              [
+                "OWASP",
+                "A06:2021 • Vulnerable and Outdated Components",
+                "Apply inventory and update practices to the bundled library."
+              ],
+              [
+                "PTES",
+                "Reporting • executive and technical records",
+                "Link the decision brief to scoped evidence, risk, remediation and retest criteria."
+              ]
+            ],
+            "widths": [
+              0.22,
+              0.34,
+              0.44
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Scoring Convention",
+            "body": "Local planning model: estimate at least one material impact over 90 days, assuming current controls. L1 below 10%, L2 10–40%, L3 above 40%. These bands are illustrative analyst judgments. I1 is limited rework, I2 a service disruption or limited disclosure, I3 a material business interruption or sensitive exposure. L × I: 1–2 Low, 3–4 Moderate, 6 High, 9 Critical."
+          }
+        ]
+      },
+      {
+        "category": "Remediation and Retest",
+        "title": "Decision and Closure Record",
+        "intro": "Close the finding when the accountable owner supplies the evidence below and an independent reviewer accepts the result.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Action Register",
+            "columns": [
+              "Action",
+              "Owner",
+              "Evidence required"
+            ],
+            "rows": [
+              [
+                "Confirm the shipped component",
+                "Build owner",
+                "Match installer hash, library version and vendor fixes."
+              ],
+              [
+                "Rebuild and sign",
+                "Release engineer",
+                "Update to a supported fixed package; retain rollback build."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.24,
+              0.49
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Retest Worksheet",
+            "columns": [
+              "Acceptance gate",
+              "Pass condition"
+            ],
+            "rows": [
+              [
+                "Provenance",
+                "Signed package inventory contains the approved fixed library."
+              ],
+              [
+                "Export",
+                "Representative synthetic export opens with matching record count."
+              ],
+              [
+                "Upgrade",
+                "User settings survive install and approved rollback."
+              ]
+            ],
+            "widths": [
+              0.34,
+              0.66
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Disposition",
+            "body": "Example status: open. Record the change ID, retest date, reviewer, evidence reference, residual risk and acceptance signature in the working template."
+          },
+          {
+            "type": "links",
+            "title": "Source References",
+            "items": [
+              [
+                "MITRE CWE • CWE-787",
+                "https://cwe.mitre.org/data/definitions/787.html"
+              ],
+              [
+                "OWASP • A06:2021 Component Risk",
+                "https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/"
+              ],
+              [
+                "PTES • Reporting",
+                "https://pentest-standard.readthedocs.io/en/latest/reporting.html"
+              ],
+              [
+                "FIRST • CVSS v3.1 specification",
+                "https://www.first.org/cvss/v3.1/specification-document"
+              ],
+              [
+                "FIRST • EPSS model and interpretation",
+                "https://www.first.org/epss/"
+              ],
+              [
+                "NVD • CVE-2018-25032",
+                "https://nvd.nist.gov/vuln/detail/CVE-2018-25032"
+              ],
+              [
+                "FIRST • CVE-2018-25032 dated EPSS • 1 Jan 2025",
+                "https://api.first.org/data/v1/epss?cve=CVE-2018-25032&date=2025-01-01"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ASX-CLD-01",
+    "title": "Cloud Pentest Report",
+    "filename": "cloud-pentest-example.pdf",
+    "service": "Cloud Identity Assessment",
+    "kind": "Assessment",
+    "pages": [
+      {
+        "category": "Engagement Brief",
+        "title": "Cloud Pentest Report",
+        "intro": "A synthetic authorization matrix grants a deployment role read access to a separate reconciliation archive. That archive is outside the role's job. Restricting access can reduce exposure without changing the normal release path.",
+        "blocks": [
+          {
+            "type": "metrics",
+            "items": [
+              [
+                "Local Priority",
+                "6/9 · High"
+              ],
+              [
+                "CVSS v3.1 Base",
+                "6.5 Medium"
+              ],
+              [
+                "Finding Status",
+                "Open · example"
+              ]
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Decision Requested",
+            "body": "Approve resource-scoped read access for the deployment role."
+          },
+          {
+            "type": "table",
+            "title": "Engagement Record",
+            "columns": [
+              "Field",
+              "Recorded value"
+            ],
+            "rows": [
+              [
+                "Subject",
+                "Freight Lab • isolated staging account"
+              ],
+              [
+                "Report / finding",
+                "ASX-CLD-01 / CLD-01"
+              ],
+              [
+                "Accountable owner",
+                "Cloud platform engineering"
+              ],
+              [
+                "Decision window",
+                "Before next release promotion"
+              ],
+              [
+                "Distribution",
+                "Public training edition • synthetic evidence; no live assessment"
+              ]
+            ],
+            "widths": [
+              0.28,
+              0.72
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Impact Rationale",
+            "body": "Assume valid low-privilege release credentials with high confidentiality impact for archive B. Synthetic policy permits read only, with no ability to modify records."
+          },
+          {
+            "type": "text",
+            "title": "Decision Gate",
+            "body": "Obtain data-owner approval before promoting the revised role."
+          },
+          {
+            "type": "bars",
+            "title": "Severity and Business Priority",
+            "rows": [
+              [
+                "CVSS v3.1 base severity",
+                6.5,
+                10
+              ],
+              [
+                "Asamarix local risk index",
+                6,
+                9
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Scope and Assurance",
+        "title": "Coverage and Evidence",
+        "intro": "Determine which archives the release role needs to read.",
+        "blocks": [
+          {
+            "type": "text",
+            "title": "In Scope",
+            "body": "One staging account, one deployment role, two synthetic storage resources and audit configuration."
+          },
+          {
+            "type": "text",
+            "title": "Excluded",
+            "body": "Production tenants, live customer records, provider control plane and organizational identity federation."
+          },
+          {
+            "type": "table",
+            "title": "Coverage Matrix",
+            "columns": [
+              "Boundary",
+              "Review method",
+              "Example result"
+            ],
+            "rows": [
+              [
+                "Identity boundary",
+                "Role grant review",
+                "Read action scoped too broadly"
+              ],
+              [
+                "Storage boundary",
+                "Resource ownership matrix",
+                "Reconciliation archive has separate owner"
+              ],
+              [
+                "Visibility",
+                "Audit event fixture",
+                "Owner can trace the modeled read"
+              ]
+            ],
+            "widths": [
+              0.24,
+              0.31,
+              0.45
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Evidence Register",
+            "columns": [
+              "ID",
+              "Source",
+              "Illustrative observation",
+              "Limitation"
+            ],
+            "rows": [
+              [
+                "CLD-E1",
+                "Policy evaluation",
+                "Release role receives read on fixture archive B.",
+                "Evaluation uses synthetic policy"
+              ],
+              [
+                "CLD-E2",
+                "Resource register",
+                "Archive B belongs to reconciliation, outside release scope.",
+                "No customer data accessed"
+              ]
+            ],
+            "widths": [
+              0.13,
+              0.21,
+              0.39,
+              0.27
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Evidence Confidence",
+            "body": "The role evaluation and ownership register agree. Only the modeled role and resources were reviewed."
+          }
+        ]
+      },
+      {
+        "category": "Technical Record",
+        "title": "Deployment Role Can Read a Neighboring Archive",
+        "intro": "CLD-01   /   Open, illustrative   /   Owner • Cloud platform engineering   /   Evidence • CLD-E1, CLD-E2",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Risk and Applicability",
+            "columns": [
+              "Measure",
+              "Assessment"
+            ],
+            "rows": [
+              [
+                "CVSS v3.1 Base",
+                "6.5 Medium • Illustrative analyst-assigned base score using the stated effects."
+              ],
+              [
+                "Vector",
+                "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+              ],
+              [
+                "CVE",
+                "No assigned CVE. This example describes a site-specific design or policy condition."
+              ],
+              [
+                "EPSS probability",
+                "N/A • No published CVE for FIRST to score."
+              ],
+              [
+                "Engagement risk",
+                "L2 (10–40%) × I3 = 6/9 • High. Assume valid low-privilege release credentials with high confidentiality impact for archive B. Synthetic policy permits read only, with no ability to modify records."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.73
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Framework Traceability",
+            "columns": [
+              "Framework",
+              "Reference",
+              "Connection to this finding"
+            ],
+            "rows": [
+              [
+                "MITRE ATT&CK",
+                "T1530 • Data from Cloud Storage",
+                "Possible consequence of the unnecessary grant."
+              ],
+              [
+                "OWASP",
+                "A01:2021 • Broken Access Control",
+                "Object-level access exceeds the documented business role."
+              ],
+              [
+                "PTES",
+                "Reporting • executive and technical records",
+                "Link the decision brief to scoped evidence, risk, remediation and retest criteria."
+              ]
+            ],
+            "widths": [
+              0.22,
+              0.34,
+              0.44
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Scoring Convention",
+            "body": "Local planning model: estimate at least one material impact over 90 days, assuming current controls. L1 below 10%, L2 10–40%, L3 above 40%. These bands are illustrative analyst judgments. I1 is limited rework, I2 a service disruption or limited disclosure, I3 a material business interruption or sensitive exposure. L × I: 1–2 Low, 3–4 Moderate, 6 High, 9 Critical."
+          }
+        ]
+      },
+      {
+        "category": "Remediation and Retest",
+        "title": "Decision and Closure Record",
+        "intro": "Close the finding when the accountable owner supplies the evidence below and an independent reviewer accepts the result.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Action Register",
+            "columns": [
+              "Action",
+              "Owner",
+              "Evidence required"
+            ],
+            "rows": [
+              [
+                "Narrow the policy",
+                "Identity owner",
+                "Limit archive reads to approved resource identifiers."
+              ],
+              [
+                "Verify rollout",
+                "Release owner",
+                "Capture allowed release access and denied archive access."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.24,
+              0.49
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Retest Worksheet",
+            "columns": [
+              "Acceptance gate",
+              "Pass condition"
+            ],
+            "rows": [
+              [
+                "Role / release storage",
+                "Required reads still succeed."
+              ],
+              [
+                "Role / reconciliation storage",
+                "Read denied in policy evaluation and staging."
+              ],
+              [
+                "Traceability",
+                "Audit event identifies principal, resource and decision."
+              ]
+            ],
+            "widths": [
+              0.34,
+              0.66
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Disposition",
+            "body": "Example status: open. Record the change ID, retest date, reviewer, evidence reference, residual risk and acceptance signature in the working template."
+          },
+          {
+            "type": "links",
+            "title": "Source References",
+            "items": [
+              [
+                "MITRE ATT&CK • T1530 Data from Cloud Storage",
+                "https://attack.mitre.org/techniques/T1530/"
+              ],
+              [
+                "OWASP • A01:2021 Access Control",
+                "https://owasp.org/Top10/2021/A01_2021-Broken_Access_Control/"
+              ],
+              [
+                "PTES • Reporting",
+                "https://pentest-standard.readthedocs.io/en/latest/reporting.html"
+              ],
+              [
+                "FIRST • CVSS v3.1 specification",
+                "https://www.first.org/cvss/v3.1/specification-document"
+              ],
+              [
+                "FIRST • EPSS model and interpretation",
+                "https://www.first.org/epss/"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ASX-API-01",
+    "title": "API Pentest Report",
+    "filename": "api-pentest-example.pdf",
+    "service": "Multi-Tenant API Assessment",
+    "kind": "Assessment",
+    "pages": [
+      {
+        "category": "Engagement Brief",
+        "title": "API Pentest Report",
+        "intro": "A fictional authorization review found a cross-tenant read in the shipment summary service. Only a limited status field was exposed in the example. The evidence set contains synthetic tenant IDs and a single status value.",
+        "blocks": [
+          {
+            "type": "metrics",
+            "items": [
+              [
+                "Local Priority",
+                "6/9 · High"
+              ],
+              [
+                "CVSS v3.1 Base",
+                "4.3 Medium"
+              ],
+              [
+                "Finding Status",
+                "Open · example"
+              ]
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Decision Requested",
+            "body": "Require an ownership decision on each shipment summary read."
+          },
+          {
+            "type": "table",
+            "title": "Engagement Record",
+            "columns": [
+              "Field",
+              "Recorded value"
+            ],
+            "rows": [
+              [
+                "Subject",
+                "Carrier Events • synthetic two-tenant API"
+              ],
+              [
+                "Report / finding",
+                "ASX-API-01 / API-01"
+              ],
+              [
+                "Accountable owner",
+                "API engineering"
+              ],
+              [
+                "Decision window",
+                "Before partner onboarding"
+              ],
+              [
+                "Distribution",
+                "Public training edition • synthetic evidence; no live assessment"
+              ]
+            ],
+            "widths": [
+              0.28,
+              0.72
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Impact Rationale",
+            "body": "Assume an authenticated partner with low privileges and disclosure limited to dispatch status. A production dataset containing names or addresses warrants reassessment."
+          },
+          {
+            "type": "text",
+            "title": "Decision Gate",
+            "body": "Review the access-matrix results before promoting the API change."
+          },
+          {
+            "type": "bars",
+            "title": "Severity and Business Priority",
+            "rows": [
+              [
+                "CVSS v3.1 base severity",
+                4.3,
+                10
+              ],
+              [
+                "Asamarix local risk index",
+                6,
+                9
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Scope and Assurance",
+        "title": "Coverage and Evidence",
+        "intro": "Establish whether shipment status reads respect partner ownership.",
+        "blocks": [
+          {
+            "type": "text",
+            "title": "In Scope",
+            "body": "Two synthetic tenants and read-only shipment summary operations. Compare expected and modeled access decisions."
+          },
+          {
+            "type": "text",
+            "title": "Excluded",
+            "body": "Production credentials, real shipment data, carriers and mutation operations."
+          },
+          {
+            "type": "table",
+            "title": "Coverage Matrix",
+            "columns": [
+              "Boundary",
+              "Review method",
+              "Example result"
+            ],
+            "rows": [
+              [
+                "Tenant A / own record",
+                "Positive control",
+                "Read allowed"
+              ],
+              [
+                "Tenant B / Tenant A record",
+                "Negative control",
+                "Read allowed contrary to policy"
+              ],
+              [
+                "Unauthenticated / record",
+                "Identity boundary",
+                "Read denied"
+              ]
+            ],
+            "widths": [
+              0.24,
+              0.31,
+              0.45
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Evidence Register",
+            "columns": [
+              "ID",
+              "Source",
+              "Illustrative observation",
+              "Limitation"
+            ],
+            "rows": [
+              [
+                "API-E1",
+                "Access decision matrix",
+                "Fixture B received status from fixture A.",
+                "Read-only synthetic record"
+              ],
+              [
+                "API-E2",
+                "Contract excerpt",
+                "Partner access is limited to tenant-owned shipments.",
+                "No exposure of addresses modeled"
+              ]
+            ],
+            "widths": [
+              0.13,
+              0.21,
+              0.39,
+              0.27
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Evidence Confidence",
+            "body": "Two fixture tenants support the finding for this one read operation. Adjacent endpoints and production data were outside scope."
+          }
+        ]
+      },
+      {
+        "category": "Technical Record",
+        "title": "Shipment Summary Read Omits the Tenant Ownership Check",
+        "intro": "API-01   /   Open, illustrative   /   Owner • API engineering   /   Evidence • API-E1, API-E2",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Risk and Applicability",
+            "columns": [
+              "Measure",
+              "Assessment"
+            ],
+            "rows": [
+              [
+                "CVSS v3.1 Base",
+                "4.3 Medium • Illustrative analyst-assigned base score using the stated effects."
+              ],
+              [
+                "Vector",
+                "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+              ],
+              [
+                "CVE",
+                "No assigned CVE. This example describes a site-specific design or policy condition."
+              ],
+              [
+                "EPSS probability",
+                "N/A • No published CVE for FIRST to score."
+              ],
+              [
+                "Engagement risk",
+                "L3 (>40%) × I2 = 6/9 • High. Assume an authenticated partner with low privileges and disclosure limited to dispatch status. A production dataset containing names or addresses warrants reassessment."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.73
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Framework Traceability",
+            "columns": [
+              "Framework",
+              "Reference",
+              "Connection to this finding"
+            ],
+            "rows": [
+              [
+                "MITRE CWE",
+                "CWE-862 • Missing Authorization",
+                "The omitted server-side ownership decision is the root weakness."
+              ],
+              [
+                "OWASP",
+                "API1:2023 • Broken Object Level Authorization",
+                "Use a positive and a negative control for each object owner."
+              ],
+              [
+                "PTES",
+                "Reporting • executive and technical records",
+                "Link the decision brief to scoped evidence, risk, remediation and retest criteria."
+              ]
+            ],
+            "widths": [
+              0.22,
+              0.34,
+              0.44
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Scoring Convention",
+            "body": "Local planning model: estimate at least one material impact over 90 days, assuming current controls. L1 below 10%, L2 10–40%, L3 above 40%. These bands are illustrative analyst judgments. I1 is limited rework, I2 a service disruption or limited disclosure, I3 a material business interruption or sensitive exposure. L × I: 1–2 Low, 3–4 Moderate, 6 High, 9 Critical."
+          }
+        ]
+      },
+      {
+        "category": "Remediation and Retest",
+        "title": "Decision and Closure Record",
+        "intro": "Close the finding when the accountable owner supplies the evidence below and an independent reviewer accepts the result.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Action Register",
+            "columns": [
+              "Action",
+              "Owner",
+              "Evidence required"
+            ],
+            "rows": [
+              [
+                "Enforce ownership",
+                "API owner",
+                "Apply the tenant check consistently to the read path."
+              ],
+              [
+                "Preserve regression coverage",
+                "Quality lead",
+                "Keep two synthetic tenants and run the authorization matrix at release."
+              ]
+            ],
+            "widths": [
+              0.27,
+              0.24,
+              0.49
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Retest Worksheet",
+            "columns": [
+              "Acceptance gate",
+              "Pass condition"
+            ],
+            "rows": [
+              [
+                "Same tenant",
+                "Allowed record is returned."
+              ],
+              [
+                "Different tenant",
+                "Access is denied without record details."
+              ],
+              [
+                "Audit",
+                "Decision is traceable without storing shipment contents."
+              ]
+            ],
+            "widths": [
+              0.34,
+              0.66
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Disposition",
+            "body": "Example status: open. Record the change ID, retest date, reviewer, evidence reference, residual risk and acceptance signature in the working template."
+          },
+          {
+            "type": "links",
+            "title": "Source References",
+            "items": [
+              [
+                "MITRE CWE • CWE-862",
+                "https://cwe.mitre.org/data/definitions/862.html"
+              ],
+              [
+                "OWASP • API1:2023 Object Authorization",
+                "https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/"
+              ],
+              [
+                "PTES • Reporting",
+                "https://pentest-standard.readthedocs.io/en/latest/reporting.html"
+              ],
+              [
+                "FIRST • CVSS v3.1 specification",
+                "https://www.first.org/cvss/v3.1/specification-document"
+              ],
+              [
+                "FIRST • EPSS model and interpretation",
+                "https://www.first.org/epss/"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ASX-DEF-01",
+    "filename": "defensive-remediation-plan.pdf",
+    "title": "Defensive Security Remediation Plan",
+    "service": "Defensive Cybersecurity",
+    "kind": "Operations",
+    "pages": [
+      {
+        "category": "Decision Brief",
+        "title": "Defensive Security Remediation Plan",
+        "intro": "A fictional freight operator has ten administrative identities, two gateway nodes and one weekly change window. The security lead needs a decision on identity exceptions, component updates and evidence of recovery.",
+        "blocks": [
+          {
+            "type": "metrics",
+            "items": [
+              [
+                "Decision Horizon",
+                "30 days"
+              ],
+              [
+                "Control Owners",
+                "3 teams"
+              ],
+              [
+                "Top Local Risk",
+                "6/9 · High"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Risk Register",
+            "columns": [
+              "Risk / evidence",
+              "90-day estimate",
+              "Impact / priority",
+              "Owner"
+            ],
+            "rows": [
+              [
+                "D-01 • Two of ten admin identities lack an MFA policy record.",
+                "L2 · 10–40%",
+                "I3 · 6/9 High",
+                "Identity lead"
+              ],
+              [
+                "D-02 • Two gateway images are modeled as affected by CVE-2022-0778.",
+                "L2 · 10–40%",
+                "I3 · 6/9 High",
+                "Network lead"
+              ],
+              [
+                "D-03 • One of three monitored admin events has no alert owner.",
+                "L2 · 10–40%",
+                "I2 · 4/9 Moderate",
+                "SOC lead"
+              ]
+            ],
+            "widths": [
+              0.405,
+              0.185,
+              0.23,
+              0.18
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Decision Requested",
+            "body": "Approve a 30-day remediation window. Give the identity lead authority to retire unowned exemptions and ask the network lead to reserve a tested failover window."
+          },
+          {
+            "type": "text",
+            "title": "Likelihood and Confidence",
+            "body": "Illustrative 90-day estimates assume current exposure persists. Partial MFA coverage and a redundant gateway reduce likelihood, while privileged access and production dependency make business impact material. Refresh the estimate after confirming each exception."
+          },
+          {
+            "type": "bars",
+            "title": "Baseline Control Coverage",
+            "rows": [
+              [
+                "Admin identities with a recorded MFA policy",
+                8,
+                10
+              ],
+              [
+                "Gateway images with verified remediation",
+                0,
+                2
+              ],
+              [
+                "Monitored events with a named alert owner",
+                2,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Exposure Analysis",
+        "title": "Triage and Framework Mapping",
+        "intro": "Separate a component advisory from local control weaknesses before assigning technical severity or a delivery deadline.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Technical Triage",
+            "columns": [
+              "Record",
+              "CVE / CVSS v3.1",
+              "EPSS / local interpretation"
+            ],
+            "rows": [
+              [
+                "D-01 • MFA exception",
+                "No assigned CVE. CVSS unscored for this policy gap.",
+                "EPSS N/A. Validate the two exemptions, their owners and use."
+              ],
+              [
+                "D-02 • Gateway TLS",
+                "CVE-2022-0778 • 7.5 High. CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                "FIRST, 1 Jan 2025: 4.625% over 30 days globally. Match the vendor build before scheduling a change."
+              ],
+              [
+                "D-03 • Alert coverage",
+                "No assigned CVE. CVSS unscored for this monitoring gap.",
+                "EPSS N/A. Verify who receives and acknowledges privileged-change alerts."
+              ]
+            ],
+            "widths": [
+              0.22,
+              0.37,
+              0.41
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Control Crosswalk",
+            "columns": [
+              "Reference",
+              "Use in this plan"
+            ],
+            "rows": [
+              [
+                "MITRE ATT&CK T1078",
+                "D-01 and D-03: review authentication coverage and visibility of valid-account use."
+              ],
+              [
+                "OWASP A06:2021",
+                "D-02: reconcile component inventory and vendor-fixed image records."
+              ],
+              [
+                "PTES reporting",
+                "Retain the finding, business consequence, owner and closure evidence when moving an assessment into the remediation backlog."
+              ]
+            ],
+            "widths": [
+              0.33,
+              0.67
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Risk Model",
+            "body": "Local planning model: estimate at least one material impact over 90 days, assuming current controls. L1 below 10%, L2 10–40%, L3 above 40%. These bands are illustrative analyst judgments. I1 is limited rework, I2 a service disruption or limited disclosure, I3 a material business interruption or sensitive exposure. L × I: 1–2 Low, 3–4 Moderate, 6 High, 9 Critical."
+          }
+        ]
+      },
+      {
+        "category": "Delivery Plan",
+        "title": "Treatment and Evidence Gates",
+        "intro": "Each workstream has an owner, an approval point and an observable completion condition.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Implementation Schedule",
+            "columns": [
+              "Window",
+              "Owner / action",
+              "Exit evidence"
+            ],
+            "rows": [
+              [
+                "Week 1",
+                "Identity lead • reconcile ten admin accounts and obtain owners.",
+                "10/10 mapped; emergency exception signed with review date."
+              ],
+              [
+                "Week 2",
+                "Network lead • stage fixed vendor image and rehearse failover.",
+                "2/2 approved images; synthetic shipment transaction completes."
+              ],
+              [
+                "Week 3",
+                "SOC lead • assign alert owner and run a tabletop handoff.",
+                "3/3 events routed and acknowledged; escalation decision logged."
+              ],
+              [
+                "Week 4",
+                "Security lead • review residual risks with operations.",
+                "Open exceptions have an expiry, accountable owner and review date."
+              ]
+            ],
+            "widths": [
+              0.16,
+              0.43,
+              0.41
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Control Acceptance",
+            "body": "The security lead owns the closure register. If a gate fails, keep the finding open and record the failed evidence ID, compensating control and next review date."
+          },
+          {
+            "type": "table",
+            "title": "Closure Register",
+            "columns": [
+              "Control",
+              "Verification owner",
+              "Initial disposition"
+            ],
+            "rows": [
+              [
+                "D-01 • Identity",
+                "Security lead",
+                "Open pending complete account roster and exception expiry."
+              ],
+              [
+                "D-02 • Gateway",
+                "Service owner",
+                "Open pending fixed-build evidence and dispatch verification."
+              ],
+              [
+                "D-03 • Monitoring",
+                "SOC manager",
+                "Open pending alert receipt and duty-team acknowledgment."
+              ]
+            ],
+            "widths": [
+              0.23,
+              0.25,
+              0.52
+            ]
+          },
+          {
+            "type": "links",
+            "title": "Source References",
+            "items": [
+              [
+                "MITRE ATT&CK • T1078 Valid Accounts",
+                "https://attack.mitre.org/techniques/T1078/"
+              ],
+              [
+                "OWASP • A06:2021 Component Risk",
+                "https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/"
+              ],
+              [
+                "PTES • Reporting",
+                "https://pentest-standard.readthedocs.io/en/latest/reporting.html"
+              ],
+              [
+                "FIRST • CVSS v3.1 specification",
+                "https://www.first.org/cvss/v3.1/specification-document"
+              ],
+              [
+                "FIRST • EPSS model and interpretation",
+                "https://www.first.org/epss/"
+              ],
+              [
+                "NVD • CVE-2022-0778",
+                "https://nvd.nist.gov/vuln/detail/CVE-2022-0778"
+              ],
+              [
+                "FIRST • CVE-2022-0778 dated EPSS",
+                "https://api.first.org/data/v1/epss?cve=CVE-2022-0778&date=2025-01-01"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ASX-OPS-01",
+    "filename": "systems-maintenance-runbook.pdf",
+    "title": "Systems Maintenance Runbook",
+    "service": "Systems Administration",
+    "kind": "Operations",
+    "pages": [
+      {
+        "category": "Change Record",
+        "title": "Systems Maintenance Runbook",
+        "intro": "Update the staging carrier adapter during its maintenance window and preserve the event queue across the restart.",
+        "blocks": [
+          {
+            "type": "metrics",
+            "items": [
+              [
+                "Change Type",
+                "Planned update"
+              ],
+              [
+                "Window",
+                "45 minutes"
+              ],
+              [
+                "Restore Target",
+                "15 minutes"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Change Controls",
+            "columns": [
+              "Control",
+              "Example entry"
+            ],
+            "rows": [
+              [
+                "Change / target",
+                "CHG-042 • adapter-stg-01 • staging"
+              ],
+              [
+                "Decision authority",
+                "Operations duty lead authorizes start or rollback."
+              ],
+              [
+                "Dependencies",
+                "Carrier sandbox, queue storage, service identity and approved package."
+              ],
+              [
+                "Business acceptance",
+                "One synthetic shipment is acknowledged once; dispatch status reconciles."
+              ]
+            ],
+            "widths": [
+              0.3,
+              0.7
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Preflight Record",
+            "columns": [
+              "Check",
+              "Required evidence",
+              "Gate"
+            ],
+            "rows": [
+              [
+                "Restore point",
+                "Record snapshot ID and last successful restore exercise.",
+                "Hold if unverified"
+              ],
+              [
+                "Queue baseline",
+                "Capture backlog and oldest item age for comparison.",
+                "Hold on unexplained growth"
+              ],
+              [
+                "Access and owner",
+                "Recovery administrator and operations reviewer available.",
+                "Record both initials"
+              ]
+            ],
+            "widths": [
+              0.24,
+              0.54,
+              0.22
+            ]
+          },
+          {
+            "type": "milestones",
+            "title": "Maintenance Window",
+            "items": [
+              [
+                "T+0",
+                "Pause intake"
+              ],
+              [
+                "T+15",
+                "Verify shipment"
+              ],
+              [
+                "T+30",
+                "Rollback cutoff"
+              ],
+              [
+                "T+45",
+                "Window ends"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Operator Worksheet",
+        "title": "Execution and Rollback",
+        "intro": "The duty lead records actual timestamps in the change record. Preserve the pre-change event count until reconciliation is signed.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Maintenance Sequence",
+            "columns": [
+              "Elapsed",
+              "Actor",
+              "Action and pass signal"
+            ],
+            "rows": [
+              [
+                "T+0",
+                "Operations",
+                "Pause new intake, record backlog and confirm maintenance notice."
+              ],
+              [
+                "T+5",
+                "Administrator",
+                "Apply approved package; record build and service state."
+              ],
+              [
+                "T+15",
+                "Quality owner",
+                "Submit one synthetic shipment. Match correlation ID and one acknowledgement."
+              ],
+              [
+                "T+25",
+                "Duty lead",
+                "Resume intake only if health, queue trend and business check pass."
+              ]
+            ],
+            "widths": [
+              0.16,
+              0.23,
+              0.61
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Rollback Trigger",
+            "body": "Begin recovery by minute 30 if acceptance is still pending or if duplicate acknowledgements appear. Restore the prior image, confirm queue integrity and reserve 15 minutes for business verification."
+          },
+          {
+            "type": "table",
+            "title": "Handover Record",
+            "columns": [
+              "Field",
+              "Required entry"
+            ],
+            "rows": [
+              [
+                "Recovery evidence",
+                "Restore point, prior build, queue reconciliation and recovery time."
+              ],
+              [
+                "Decision",
+                "Proceed / rolled back / deferred; approver and actual time."
+              ],
+              [
+                "Follow-up",
+                "Named monitor, first review time and incident or change link."
+              ]
+            ],
+            "widths": [
+              0.3,
+              0.7
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ASX-PM-01",
+    "filename": "it-project-cutover-plan.pdf",
+    "title": "IT Project Cutover Plan",
+    "service": "IT Project Management",
+    "kind": "Operations",
+    "pages": [
+      {
+        "category": "Steering Decision",
+        "title": "IT Project Cutover Plan",
+        "intro": "Move one warehouse lane to a revised carrier status mapping. The change board can approve the pilot when operations and engineering agree on the reconciliation criteria.",
+        "blocks": [
+          {
+            "type": "metrics",
+            "items": [
+              [
+                "Pilot",
+                "One lane"
+              ],
+              [
+                "Rollback Point",
+                "T+30 min"
+              ],
+              [
+                "Decision Owner",
+                "Project sponsor"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Go / No-Go Register",
+            "columns": [
+              "Gate",
+              "Accountable role",
+              "Acceptance evidence"
+            ],
+            "rows": [
+              [
+                "Mapping sign-off",
+                "Warehouse lead",
+                "Approved status map, including cancelled and held shipments."
+              ],
+              [
+                "Reconciliation",
+                "Integration lead",
+                "20/20 synthetic shipments reach the expected terminal state."
+              ],
+              [
+                "Support readiness",
+                "Support manager",
+                "Escalation rota, fallback mapping and owner present."
+              ],
+              [
+                "Business release",
+                "Sponsor",
+                "All gates accepted or a named exception explicitly approved."
+              ]
+            ],
+            "widths": [
+              0.23,
+              0.23,
+              0.54
+            ]
+          },
+          {
+            "type": "note",
+            "title": "Dependency Requiring a Decision",
+            "body": "The carrier sandbox closes at T+60. Schedule rollback verification by T+45. If the window slips, defer the pilot and keep the existing mapping active."
+          },
+          {
+            "type": "milestones",
+            "title": "Decision Checkpoints",
+            "items": [
+              [
+                "T+0",
+                "Pilot release"
+              ],
+              [
+                "T+15",
+                "Reconcile"
+              ],
+              [
+                "T+30",
+                "Sponsor decision"
+              ],
+              [
+                "T+45",
+                "Support handoff"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Delivery Control",
+        "title": "Cutover and Handover",
+        "intro": "Use the decision log throughout the pilot. The project manager records actual event times and escalates a missed gate to the sponsor.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Run of Show",
+            "columns": [
+              "Planned",
+              "Owner",
+              "Milestone / decision"
+            ],
+            "rows": [
+              [
+                "T−30 min",
+                "Project manager",
+                "Confirm lane, escalation contacts, checkpoints and rollback authority."
+              ],
+              [
+                "T+0",
+                "Integration lead",
+                "Release the approved mapping to the pilot lane only."
+              ],
+              [
+                "T+15",
+                "Warehouse lead",
+                "Compare status totals against the acceptance ledger."
+              ],
+              [
+                "T+30",
+                "Sponsor",
+                "Decide extend, hold or revert. Document the reason."
+              ],
+              [
+                "T+45",
+                "Support manager",
+                "Verify backlog is reconciled and take custody of the support record."
+              ]
+            ],
+            "widths": [
+              0.17,
+              0.25,
+              0.58
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Exception Register",
+            "columns": [
+              "Signal",
+              "Decision"
+            ],
+            "rows": [
+              [
+                "Any duplicate terminal event",
+                "Pause intake for the pilot; reconcile identifiers before resuming."
+              ],
+              [
+                "Unmatched terminal status at checkpoint",
+                "Revert pilot mapping unless operations explicitly accepts a bounded exception."
+              ],
+              [
+                "Handover gate",
+                "Record open risks, named support owner, next review and signed decision."
+              ]
+            ],
+            "widths": [
+              0.4,
+              0.6
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ASX-INT-01",
+    "filename": "integration-interface-specification.pdf",
+    "title": "Integration and Automation Specification",
+    "service": "Integration Engineering",
+    "kind": "Operations",
+    "pages": [
+      {
+        "category": "Interface Contract",
+        "title": "Integration and Automation Specification",
+        "intro": "A warehouse publishes shipment events to a carrier adapter. This example defines ownership, field semantics and the reconciliation contract for a single event type.",
+        "blocks": [
+          {
+            "type": "metrics",
+            "items": [
+              [
+                "Contract",
+                "shipment.status.v1"
+              ],
+              [
+                "Producer",
+                "Warehouse"
+              ],
+              [
+                "Consumer",
+                "Carrier adapter"
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Field Contract",
+            "columns": [
+              "Element",
+              "Type / rule",
+              "Consumer behavior"
+            ],
+            "rows": [
+              [
+                "event_id",
+                "Required string; unique per source event.",
+                "Use producer + event_id as the durable deduplication key."
+              ],
+              [
+                "shipment_ref",
+                "Required partner-scoped reference.",
+                "Reject unknown partner mapping for operator review."
+              ],
+              [
+                "status",
+                "Enum: ready, dispatched, held.",
+                "Map to RDY, DSP or HLD. Preserve the source value."
+              ],
+              [
+                "occurred_at",
+                "RFC 3339 timestamp with offset.",
+                "Normalize to UTC; retain original timestamp."
+              ],
+              [
+                "sequence",
+                "Positive per-shipment integer.",
+                "Defer out-of-order events until the gap is reconciled."
+              ]
+            ],
+            "widths": [
+              0.21,
+              0.41,
+              0.38
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Synthetic Example",
+            "body": "EVT-042 · shipment DEMO-8 · status dispatched · occurred_at 2026-02-12T09:05:00+09:00 · sequence 4. Expected carrier status DSP at 00:05 UTC."
+          },
+          {
+            "type": "milestones",
+            "title": "Event Lifecycle",
+            "items": [
+              [
+                "Publish",
+                "Warehouse"
+              ],
+              [
+                "Validate",
+                "Carrier adapter"
+              ],
+              [
+                "Acknowledge",
+                "Delivery ledger"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Reliability Worksheet",
+        "title": "Failure Handling and Acceptance",
+        "intro": "A delivery acknowledgement records successful processing. Queue ownership remains with the adapter until reconciliation is complete.",
+        "blocks": [
+          {
+            "type": "table",
+            "title": "Exception Policy",
+            "columns": [
+              "Condition",
+              "Disposition",
+              "Owner"
+            ],
+            "rows": [
+              [
+                "Same event ID and same payload",
+                "Return prior processing result. Suppress repeat publication.",
+                "Adapter owner"
+              ],
+              [
+                "Same ID, different payload",
+                "Quarantine the event and preserve both hashes.",
+                "Data steward"
+              ],
+              [
+                "Temporary delivery failure",
+                "Retry with a bounded schedule. After the final attempt, send to review.",
+                "Operations"
+              ],
+              [
+                "Late or missing sequence",
+                "Hold pending event; reconcile against producer ledger.",
+                "Integration lead"
+              ]
+            ],
+            "widths": [
+              0.31,
+              0.49,
+              0.2
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Acceptance Ledger",
+            "columns": [
+              "Fixture",
+              "Expected record"
+            ],
+            "rows": [
+              [
+                "Normal EVT-042",
+                "One DSP event and one acknowledgement."
+              ],
+              [
+                "Duplicate EVT-042",
+                "One outbound event total; duplicate decision logged."
+              ],
+              [
+                "Temporary failure then recovery",
+                "Same event ID, one completed delivery, attempts visible."
+              ],
+              [
+                "Exhausted retry / missing sequence",
+                "Review item has owner, correlation ID, reason and replay approval."
+              ]
+            ],
+            "widths": [
+              0.42,
+              0.58
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Release Sign-Off",
+            "body": "Record contract version, producer approval, consumer approval, test evidence ledger and the first production reconciliation window."
+          }
+        ]
+      }
+    ]
+  }
+]

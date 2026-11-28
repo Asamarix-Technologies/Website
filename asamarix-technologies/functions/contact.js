@@ -2,6 +2,11 @@ const inbox = "marinoozkaya@asamarix.com";
 const maxBodyBytes = 48 * 1024;
 const fieldNames = ["kind", "name", "email", "person", "service", "timeline", "message", "cf-turnstile-response"];
 const services = new Map([
+  ["penetration-testing", "Penetration testing"],
+  ["defensive-security", "Defensive cybersecurity"],
+  ["systems-administration", "Systems administration"],
+  ["it-project-management", "IT project management"],
+  // Keep accepting open forms from the previous release.
   ["security", "Cybersecurity consulting or assessment"],
   ["integration", "Systems integration"],
   ["automation", "Workflow automation"],
@@ -208,24 +213,24 @@ export async function onRequest(context) {
   const enabled = configured(env, url);
 
   if (request.method === "GET" || request.method === "HEAD") return showForm(context, enabled);
-  if (request.method !== "POST") return result(405, "Method unavailable", "Open the contact page to send an inquiry.");
-  if (!enabled) return result(503, "Form unavailable", "Please email contact@asamarix.com.");
-  if (request.headers.get("Origin") !== url.origin) return result(403, "Request blocked", "Open the contact page and try again.");
+  if (request.method !== "POST") return result(405, "Method Unavailable", "Open the contact page to send an inquiry.");
+  if (!enabled) return result(503, "Form Unavailable", "Please email contact@asamarix.com.");
+  if (request.headers.get("Origin") !== url.origin) return result(403, "Request Blocked", "Open the contact page and try again.");
 
   const contentType = request.headers.get("Content-Type")?.split(";")[0].trim().toLowerCase();
   if (contentType !== "application/x-www-form-urlencoded" || request.headers.has("Content-Encoding")) {
-    return result(415, "Unsupported submission", "Open the contact form and try again.");
+    return result(415, "Unsupported Submission", "Open the contact form and try again.");
   }
 
   let fields;
   try {
     const body = await readBody(request);
-    if (body === null) return result(413, "Inquiry too large", "Shorten your message and try again.");
+    if (body === null) return result(413, "Inquiry Too Large", "Shorten your message and try again.");
     fields = readFields(body);
   } catch {
     fields = null;
   }
-  if (!fields) return result(400, "Check your details", "Use a valid email address and complete all fields and the security check.");
+  if (!fields) return result(400, "Check Your Details", "Use a valid email address and complete all fields and the security check.");
 
   let stage = "turnstile";
   try {
@@ -234,7 +239,7 @@ export async function onRequest(context) {
       response: fields.token,
     });
     if (verification.success !== true || verification.hostname !== url.hostname || verification.action !== "contact") {
-      return result(403, "Security check failed", "Reopen the contact page and try again.");
+      return result(403, "Security Check Failed", "Reopen the contact page and try again.");
     }
 
     stage = "email-request";
@@ -258,12 +263,12 @@ export async function onRequest(context) {
     stage = "email-result";
     const accepted = delivery.result?.delivered?.includes(inbox) || delivery.result?.queued?.includes(inbox);
     if (delivery.success !== true || !accepted) throw new Error("Delivery was not accepted");
-    return result(200, "Inquiry submitted", "Your inquiry was accepted for delivery. Thank you for contacting Asamarix.");
+    return result(200, "Inquiry Submitted", "Your inquiry was accepted for delivery. Thank you for contacting Asamarix.");
   } catch (error) {
     console.warn("Contact submission failed", {
       stage,
       errorType: error instanceof Error ? error.name : "Unknown",
     });
-    return result(502, "Delivery could not be confirmed", "Please email contact@asamarix.com if you need to follow up.");
+    return result(502, "Delivery Could Not Be Confirmed", "Please email contact@asamarix.com if you need to follow up.");
   }
 }

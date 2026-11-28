@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fictional Asamarix penetration test report with scope, findings, remediation and retest criteria.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>Sample penetration test report | Asamarix Technologies</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="/" aria-label="Asamarix Technologies home">
+        <span class="wordmark-crop">
+          <img src="/assets/Asamarix_Logo.png" width="576" height="384" alt="Asamarix Technologies">
+        </span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/services/">Services</a>
+        <a href="/about/">About</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <header class="page-intro">
+      <div class="wrap">
+        <p class="eyebrow">Illustrative deliverable</p>
+        <h1>Sample penetration test report</h1>
+        <p class="lede">An excerpt from a fictional assessment of a shipment operations portal, using synthetic data. The example shows the level of detail an operations team needs to act on a finding.</p>
+      </div>
+    </header>
+    <article class="wrap section report prose">
+      <h2>Executive summary</h2>
+      <p>The example assessment identified a gap in how the portal enforced multifactor authentication for privileged users. A compromised operator password could have exposed shipment records or let someone change shipment statuses. We would prioritize enforcing MFA for all privileged users and confirming that the emergency access process is monitored.</p>
+
+      <h2>Scope and limitations</h2>
+      <p>The exercise covered a staging portal with synthetic shipments and two roles, read-only dispatcher and operations administrator. The example excludes production, carrier systems and third-party identity infrastructure.</p>
+
+      <h2>Finding</h2>
+      <h3>Multifactor authentication was optional for operations administrators</h3>
+      <dl class="report-details">
+        <dt>Example severity</dt><dd>High</dd>
+        <dt>Affected area</dt><dd>Operations administrator sign-in</dd>
+        <dt>Suggested owner</dt><dd>Identity and access management, with the portal owner</dd>
+      </dl>
+      <p><strong>Evidence summary.</strong> The assessment record showed a privileged test account could sign in with a password alone. The portal audit event confirmed that the session was granted administrator access.</p>
+      <p><strong>Business impact.</strong> An unauthorized change to a shipment status could trigger downstream exceptions, delay fulfillment, and require manual reconciliation.</p>
+      <p><strong>Recommended action.</strong> Audit privileged accounts, require MFA through the identity policy, and document an approved emergency-access procedure with monitoring. Schedule the change with operations and brief staff on recovery before enforcement.</p>
+
+      <h2>Retest criteria</h2>
+      <ul class="deliverables">
+        <li>Every in-scope privileged account is subject to MFA policy.</li>
+        <li>Administrator sessions are granted only after the required factor is satisfied.</li>
+        <li>Routine dispatcher access still works and emergency access produces a reviewable alert.</li>
+      </ul>
+      <a href="/projects/">Back to projects</a>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="footer-brand" href="/">Asamarix Technologies</a>
+      <nav aria-label="Footer navigation">
+        <a href="/services/">Services</a>
+        <a href="/about/">About</a>
+        <a href="/projects/">Projects</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

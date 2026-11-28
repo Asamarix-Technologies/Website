@@ -1,40 +1,6 @@
-/* Consultation page styles */
-.consultation {
-  display: grid;
-  grid-template-columns: minmax(0, .85fr) minmax(0, 1.55fr);
-  align-items: start;
-  gap: clamp(1.75rem, 5vw, 4.5rem);
-  padding-block: clamp(2rem, 6vw, 5rem);
-}
-
-.consultation-intro h1 {
-  max-width: 12ch;
-  font-size: clamp(2.45rem, 5vw, 4.35rem);
-}
-
-.consultation-help {
-  margin-top: 2rem;
-  padding: 1.25rem;
-  border: 1px solid var(--line);
-  border-radius: .75rem;
-  background: var(--wash);
-  overflow-wrap: anywhere;
-}
-
-.consultation-help h2 { font-size: 1.125rem; }
-.consultation-help p { margin-top: .6rem; }
-
-.consultation-panel {
-  min-width: 0;
-  padding: clamp(1rem, 3vw, 2.25rem);
-  border: 1px solid var(--line);
-  border-radius: .9rem;
-  background: var(--white);
-  box-shadow: 0 .4rem 1.75rem rgb(16 35 62 / 7%);
-}
-
-.consultation #contact-form { max-width: none; }
-.consultation #contact-fields { margin: 0; }
+/* Consultation form styles */
+.consultation-panel #contact-form { max-width: none; }
+.consultation-panel #contact-fields { margin: 0; }
 .consultation-section { margin-top: 1.25rem; }
 .consultation-section + .consultation-section {
   padding-top: 1.25rem;
@@ -50,12 +16,12 @@
 }
 
 .consultation-full { grid-column: 1 / -1; }
-.consultation #contact-fields label { margin: 0 0 .25rem; }
-.consultation #contact-fields label span { font-weight: 400; color: var(--muted); }
+.consultation-panel #contact-fields label { margin: 0 0 .25rem; }
+.consultation-panel #contact-fields label span { font-weight: 400; color: var(--slate); }
 .consultation-note { font-size: .9rem; }
-.consultation #contact-note { margin-bottom: .5rem; }
+.consultation-panel #contact-note { margin-bottom: .5rem; }
 .consultation-submit { margin-top: 1.25rem; }
-.consultation #contact-challenge { margin: 0 0 .8rem; }
+.consultation-panel #contact-challenge { margin: 0 0 .8rem; }
 
 .consultation-sr {
   position: absolute;
@@ -66,15 +32,15 @@
   white-space: nowrap;
 }
 
-@media (max-width: 58rem) {
-  .consultation { grid-template-columns: minmax(0, 1fr); }
-  .consultation-intro h1 { max-width: none; }
-  .consultation-help { margin-top: 1rem; }
-}
-
-@media (max-width: 36rem) {
-  .consultation.wrap { width: calc(100% - 1rem); }
-  .consultation-intro { padding-inline: .5rem; }
+@media (max-width: 37rem) {
+  .contact-layout.wrap { width: calc(100% - 1rem); }
+  .contact-sidebar { padding-inline: .5rem; }
+  .form-panel.consultation-panel { padding: .75rem; }
   .consultation-fields { grid-template-columns: minmax(0, 1fr); }
   .consultation-submit .button { width: 100%; }
+}
+
+@media (max-width: 21rem) {
+  .contact-layout.wrap { width: calc(100% - .5rem); }
+  .form-panel.consultation-panel { padding-inline: .3rem; }
 }
