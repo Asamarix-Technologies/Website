@@ -1,6 +1,19 @@
 const inbox = "marinoozkaya@asamarix.com";
 const maxBodyBytes = 48 * 1024;
-const fieldNames = ["kind", "name", "email", "person", "message", "cf-turnstile-response"];
+const fieldNames = ["kind", "name", "email", "person", "service", "timeline", "message", "cf-turnstile-response"];
+const services = new Map([
+  ["security", "Cybersecurity consulting or assessment"],
+  ["integration", "Systems integration"],
+  ["automation", "Workflow automation"],
+  ["unsure", "Other or unsure"],
+]);
+const timelines = new Map([
+  ["", "Not specified"],
+  ["within-month", "Within a month"],
+  ["one-to-three", "In 1–3 months"],
+  ["later", "In more than 3 months"],
+  ["flexible", "Flexible or exploring options"],
+]);
 const turnstileOrigin = "https://challenges.cloudflare.com";
 const emailPattern = /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
 
@@ -141,16 +154,19 @@ function readFields(body) {
   const person = values.get("person").normalize("NFC");
   const email = values.get("email");
   const message = values.get("message").replace(/\r\n?/g, "\n").normalize("NFC");
+  const service = services.get(values.get("service"));
+  const timeline = timelines.get(values.get("timeline"));
   const token = values.get("cf-turnstile-response");
   const singleLineControls = /[\u0000-\u001f\u007f-\u009f\u2028\u2029]/u;
   const messageControls = /[\u0000-\u0008\u000b-\u001f\u007f-\u009f]/u;
 
   if (!["company", "individual"].includes(kind)) return null;
-  if ([name, person].some((value) => !value.trim() || value.length > 120 || singleLineControls.test(value))) return null;
+  if (!service || !timeline || !person.trim()) return null;
+  if ([name, person].some((value) => value.length > 120 || singleLineControls.test(value))) return null;
   if (email.length > 254 || email.split("@")[0].length > 64 || singleLineControls.test(email) || !emailPattern.test(email)) return null;
   if (!message.trim() || message.length > 3000 || messageControls.test(message)) return null;
   if (!/^[A-Za-z0-9_.-]{1,2048}$/.test(token) || singleLineControls.test(token)) return null;
-  return { kind, name: name.trim(), email, person: person.trim(), message: message.trim(), token };
+  return { kind, name: name.trim(), email, person: person.trim(), service, timeline, message: message.trim(), token };
 }
 
 async function postJson(url, data, token) {
@@ -229,9 +245,11 @@ export async function onRequest(context) {
       subject: "Asamarix website consultation inquiry",
       text: [
         `Inquiry type: ${fields.kind}`,
-        `Company or individual: ${fields.name}`,
+        `Organization: ${fields.name || "Not specified"}`,
         `Contact email: ${fields.email}`,
         `Contact person: ${fields.person}`,
+        `Service area: ${fields.service}`,
+        `Target kickoff: ${fields.timeline}`,
         "",
         fields.message,
       ].join("\n"),

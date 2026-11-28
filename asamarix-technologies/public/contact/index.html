@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Consultation inquiries for Asamarix Technologies.">
   <meta name="color-scheme" content="light">
-  <title>Contact | Asamarix Technologies</title>
+  <title>Request a consultation | Asamarix Technologies</title>
   <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/contact.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -24,40 +25,84 @@
     </div>
   </header>
   <main id="main" tabindex="-1">
-    <div class="wrap page">
-      <header class="page-heading">
-        <h1>Discuss your project</h1>
-        <p class="lede">Tell us what you want to improve, which systems are involved, and what timeline you’re working toward.</p>
+    <div class="wrap consultation">
+      <header class="consultation-intro">
+        <h1>Request a consultation</h1>
+        <p class="lede">Tell us what you’re planning. We’ll review the scope and reply by email to discuss next steps.</p>
+        <div class="consultation-help">
+          <h2>What to include</h2>
+          <p>Describe the outcome you want, the systems involved, and any deadlines or constraints. For a security assessment, share the type of system and approximate scope.</p>
+          <p>Prefer email? <a href="mailto:contact@asamarix.com">contact@asamarix.com</a></p>
+        </div>
       </header>
-      <p class="contact-email">Email us at <a href="mailto:contact@asamarix.com">contact@asamarix.com</a>.</p>
-      <p id="form-offline">The online form is currently unavailable.</p>
-      <form id="contact-form" action="/contact/" method="post" accept-charset="UTF-8" hidden>
-        <p id="contact-note">Please share only the details needed for an initial consultation.</p>
-        <fieldset id="contact-fields" disabled>
-          <legend>Consultation inquiry</legend>
-          <label for="kind">I’m contacting Asamarix as</label>
-          <select id="kind" name="kind" required>
-            <option value="">Select one</option>
-            <option value="company">A company</option>
-            <option value="individual">An individual</option>
-          </select>
-
-          <label for="name">Company or individual name</label>
-          <input id="name" name="name" type="text" maxlength="120" required>
-
-          <label for="email">Contact email</label>
-          <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
-
-          <label for="person">Contact person</label>
-          <input id="person" name="person" type="text" autocomplete="name" maxlength="120" required>
-
-          <label for="message">Reason for reaching out</label>
-          <textarea id="message" name="message" rows="7" maxlength="3000" aria-describedby="contact-note" required></textarea>
-
-          <div id="contact-challenge" class="cf-turnstile" data-action="contact" data-size="flexible"></div>
-          <button class="button" type="submit">Send inquiry</button>
-        </fieldset>
-      </form>
+      <div class="consultation-panel">
+        <p id="form-offline">The online form is currently unavailable. Please use the email address on this page.</p>
+        <form id="contact-form" action="/contact/" method="post" accept-charset="UTF-8" hidden>
+          <p class="consultation-note">All fields are required unless marked optional.</p>
+          <fieldset id="contact-fields" disabled>
+            <legend class="consultation-sr">Consultation inquiry</legend>
+            <section class="consultation-section" aria-labelledby="contact-details">
+              <h2 id="contact-details">Contact details</h2>
+              <div class="consultation-fields">
+                <div>
+                  <label for="kind">Requesting as</label>
+                  <select id="kind" name="kind" required>
+                    <option value="">Select one</option>
+                    <option value="company">Company or organization</option>
+                    <option value="individual">Individual</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="name">Company or organization <span>(optional)</span></label>
+                  <input id="name" name="name" type="text" autocomplete="organization" maxlength="120">
+                </div>
+                <div>
+                  <label for="person">Your name</label>
+                  <input id="person" name="person" type="text" autocomplete="name" maxlength="120" required>
+                </div>
+                <div>
+                  <label for="email">Email address</label>
+                  <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+                </div>
+              </div>
+            </section>
+            <section class="consultation-section" aria-labelledby="project-details">
+              <h2 id="project-details">Project details</h2>
+              <div class="consultation-fields">
+                <div>
+                  <label for="service">Service area</label>
+                  <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="security">Cybersecurity consulting or assessment</option>
+                    <option value="integration">Systems integration</option>
+                    <option value="automation">Workflow automation</option>
+                    <option value="unsure">Other or unsure</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="timeline">Target kickoff <span>(optional)</span></label>
+                  <select id="timeline" name="timeline">
+                    <option value="">Select a timeframe</option>
+                    <option value="within-month">Within a month</option>
+                    <option value="one-to-three">In 1–3 months</option>
+                    <option value="later">In more than 3 months</option>
+                    <option value="flexible">Flexible or exploring options</option>
+                  </select>
+                </div>
+                <div class="consultation-full">
+                  <label for="message">Project goals and scope</label>
+                  <p class="consultation-note" id="contact-note">Leave out passwords, API keys, customer data, and confidential technical details.</p>
+                  <textarea id="message" name="message" rows="5" maxlength="3000" aria-describedby="contact-note" required></textarea>
+                </div>
+              </div>
+            </section>
+            <div class="consultation-submit">
+              <div id="contact-challenge" class="cf-turnstile" data-action="contact" data-size="flexible"></div>
+              <button class="button" type="submit">Send consultation request</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
     </div>
   </main>
   <footer class="site-footer">
