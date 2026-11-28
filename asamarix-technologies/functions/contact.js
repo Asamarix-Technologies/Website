@@ -202,6 +202,7 @@ export async function onRequest(context) {
   }
   if (!fields) return result(400, "Check your details", "Use a valid email address and complete all fields and the security check.");
 
+  let stage = "turnstile";
   try {
     const verification = await postJson(`${turnstileOrigin}/turnstile/v0/siteverify`, {
       secret: env.TURNSTILE_SECRET,
@@ -211,6 +212,7 @@ export async function onRequest(context) {
       return result(403, "Security check failed", "Reopen the contact page and try again.");
     }
 
+    stage = "email-request";
     const account = env.EMAIL_ACCOUNT_ID;
     const delivery = await postJson(`https://api.cloudflare.com/client/v4/accounts/${account}/email/sending/send`, {
       from: env.EMAIL_FROM,
@@ -226,10 +228,15 @@ export async function onRequest(context) {
       ].join("\n"),
     }, env.EMAIL_API_TOKEN);
 
+    stage = "email-result";
     const accepted = delivery.result?.delivered?.includes(inbox) || delivery.result?.queued?.includes(inbox);
     if (delivery.success !== true || !accepted) throw new Error("Delivery was not accepted");
     return result(200, "Inquiry submitted", "Your inquiry was accepted for delivery. Thank you for contacting Asamarix.");
-  } catch {
+  } catch (error) {
+    console.warn("Contact submission failed", {
+      stage,
+      errorType: error instanceof Error ? error.name : "Unknown",
+    });
     return result(502, "Delivery could not be confirmed", "Please email contact@asamarix.com if you need to follow up.");
   }
 }
