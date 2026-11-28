@@ -36,8 +36,10 @@ a:hover { color: var(--blue-dark); }
   flex-wrap: wrap;
   gap: .3rem 2rem;
 }
+.header-inner { padding-block: .45rem; }
 .wordmark { display: inline-flex; align-items: center; }
-.wordmark img { display: block; width: 9.75rem; height: auto; }
+.wordmark-crop { display: block; width: 9.75rem; aspect-ratio: 576 / 288; overflow: hidden; }
+.wordmark img { display: block; width: 100%; height: auto; }
 nav { display: flex; flex-wrap: wrap; gap: .15rem .35rem; }
 nav a { padding: .5rem .65rem; border-radius: .3rem; color: var(--slate); text-decoration: none; }
 nav a:hover, nav a[aria-current="page"] { color: var(--blue-dark); background: var(--pale-blue); }
@@ -105,7 +107,13 @@ p { color: var(--slate); }
 .prose > a { display: inline-block; }
 .service-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 2.35fr); }
 .service-list section { padding-bottom: 1.6rem; margin-bottom: 1.65rem; border-bottom: 1px solid var(--line); scroll-margin-top: 1.25rem; }
-.service-list strong { color: var(--navy); }
+.deliverables { padding-inline-start: 1.25rem; color: var(--slate); }
+.deliverables li + li { margin-top: .25rem; }
+.report { max-width: 49rem; }
+.report h2:not(:first-child) { margin-top: 2rem; }
+.report-details { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: .25rem 1rem; }
+.report-details dt { font-weight: 650; }
+.report-details dd { margin: 0; color: var(--slate); }
 
 .founder { align-items: center; }
 .founder figure { max-width: 26rem; }
@@ -141,5 +149,5 @@ button.button { border: 0; cursor: pointer; font: inherit; font-weight: 650; }
   .hero-inner, .split, .founder, .service-layout, .contact-layout { grid-template-columns: minmax(0, 1fr); }
   .wrap { width: calc(100% - 2rem); }
   .header-inner { padding-bottom: .6rem; }
-  .wordmark img { width: 8.5rem; }
+  .wordmark-crop { width: 8.5rem; }
 }

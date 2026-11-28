@@ -14,7 +14,9 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="wordmark" href="/" aria-label="Asamarix Technologies home">
-        <img src="/assets/Asamarix_Logo.png" width="576" height="384" alt="Asamarix Technologies">
+        <span class="wordmark-crop">
+          <img src="/assets/Asamarix_Logo.png" width="576" height="384" alt="Asamarix Technologies">
+        </span>
       </a>
       <nav aria-label="Main navigation">
         <a href="/services/">Services</a>
@@ -37,6 +39,8 @@
         <p>For penetration testing, a general description of the application or environment is enough for a first conversation. For IT projects, share the milestone or operational problem you’re working toward.</p>
         <h3>Email</h3>
         <a href="mailto:contact@asamarix.com">contact@asamarix.com</a>
+        <h3>Inquiry privacy</h3>
+        <p>We collect the contact details and project information you submit to evaluate and respond to your inquiry. Cloudflare provides the form’s spam check and email delivery. Your inquiry is sent to the Asamarix inbox for follow-up.</p>
       </aside>
       <div class="form-panel consultation-panel">
         <p id="form-offline">The online form is currently unavailable. Please use the email address on this page.</p>
@@ -76,7 +80,10 @@
                   <label for="service">Service area</label>
                   <select id="service" name="service" required>
                     <option value="">Select a service</option>
-                    <option value="security">Cybersecurity consulting or assessment</option>
+                    <option value="penetration-testing">Penetration testing</option>
+                    <option value="defensive-security">Defensive cybersecurity</option>
+                    <option value="systems-administration">Systems administration</option>
+                    <option value="it-project-management">IT project management</option>
                     <option value="integration">Systems integration</option>
                     <option value="automation">Workflow automation</option>
                     <option value="unsure">Other or unsure</option>

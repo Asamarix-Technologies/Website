@@ -2,6 +2,11 @@ const inbox = "marinoozkaya@asamarix.com";
 const maxBodyBytes = 48 * 1024;
 const fieldNames = ["kind", "name", "email", "person", "service", "timeline", "message", "cf-turnstile-response"];
 const services = new Map([
+  ["penetration-testing", "Penetration testing"],
+  ["defensive-security", "Defensive cybersecurity"],
+  ["systems-administration", "Systems administration"],
+  ["it-project-management", "IT project management"],
+  // Keep accepting open forms from the previous release.
   ["security", "Cybersecurity consulting or assessment"],
   ["integration", "Systems integration"],
   ["automation", "Workflow automation"],

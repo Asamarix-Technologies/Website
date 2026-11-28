@@ -14,7 +14,9 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="wordmark" href="/" aria-label="Asamarix Technologies home">
-        <img src="/assets/Asamarix_Logo.png" width="576" height="384" alt="Asamarix Technologies">
+        <span class="wordmark-crop">
+          <img src="/assets/Asamarix_Logo.png" width="576" height="384" alt="Asamarix Technologies">
+        </span>
       </a>
       <nav aria-label="Main navigation">
         <a href="/services/">Services</a>
@@ -42,6 +44,15 @@
         <p>GitHub tracks source changes and Cloudflare Pages provides previews before production rollout. The inquiry endpoint checks request origins, validates fields, verifies Turnstile server-side, and sends plain-text email to a fixed inbox. Security headers restrict the resources the public pages can load.</p>
         <h3>Maintenance</h3>
         <p>Content can be updated without a frontend build system. The contact endpoint has its own deployment configuration, so updating a service description doesn’t require changes to the email flow.</p>
+      </div>
+    </section>
+    <section class="band" aria-labelledby="sample-report">
+      <div class="wrap section split">
+        <h2 id="sample-report">Sample penetration test report</h2>
+        <div class="prose">
+          <p>See how a fictional assessment communicates business impact, assigns remediation ownership, and defines what to verify during a retest.</p>
+          <a href="/projects/sample-assessment/">Read the sample report</a>
+        </div>
       </div>
     </section>
   </main>
