@@ -164,7 +164,8 @@ async function postJson(url, data, token) {
     method: "POST",
     headers,
     body: JSON.stringify(data),
-    redirect: "error",
+    // Workers returns redirects without following them. The non-2xx check rejects them.
+    redirect: "manual",
     signal,
   });
   console.info("Contact provider response received", {
