@@ -47,24 +47,28 @@ function result(status, title, message) {
 }
 
 function configured(env, url) {
-  const allowed = (env.CONTACT_ORIGINS || "")
-    .split(",")
-    .map((value) => value.trim());
-
+  const allowed = (env.CONTACT_ORIGINS || "").split(",").map((value) => value.trim());
+  const accountId = env.EMAIL_ACCOUNT_ID;
   const checks = {
     CONTACT_ORIGINS: allowed.includes(url.origin),
     TURNSTILE_SITE_KEY: /^[A-Za-z0-9_-]{10,100}$/.test(env.TURNSTILE_SITE_KEY || ""),
     TURNSTILE_SECRET: Boolean(env.TURNSTILE_SECRET),
-    EMAIL_ACCOUNT_ID: /^[a-f0-9]{32}$/i.test(env.EMAIL_ACCOUNT_ID || ""),
+    EMAIL_ACCOUNT_ID: typeof accountId === "string" && /^[a-f0-9]{32}$/i.test(accountId),
     EMAIL_FROM: emailPattern.test(env.EMAIL_FROM || ""),
     EMAIL_API_TOKEN: Boolean(env.EMAIL_API_TOKEN),
   };
 
   const failed = Object.keys(checks).filter((name) => !checks[name]);
   if (failed.length > 0) {
-    console.warn(`Contact configuration failed: ${failed.join(", ")}`);
+    console.warn("Contact configuration failed:", failed.join(", "));
   }
-
+  if (!checks.EMAIL_ACCOUNT_ID) {
+    console.warn("EMAIL_ACCOUNT_ID runtime check", {
+      type: typeof accountId,
+      length: typeof accountId === "string" ? accountId.length : null,
+      valid: false,
+    });
+  }
   return failed.length === 0;
 }
 
@@ -159,20 +163,18 @@ async function postJson(url, data, token) {
     redirect: "error",
     signal: AbortSignal.timeout(6000),
   });
-
- if (!response.ok) {
-  const provider = new URL(url).hostname;
-  const error = await response.json().catch(() => null);
-
-  console.warn("Contact provider rejected request", {
-    provider,
-    status: response.status,
-    codes: Array.isArray(error?.errors)
-      ? error.errors.map(({ code }) => code).filter(Number.isInteger)
-      : [],
-  });
-
-  throw new Error("Provider rejected the request");
+  if (!response.ok) {
+    const error = await response.json().catch(() => null);
+    console.warn("Contact provider rejected request", {
+      provider: new URL(url).hostname,
+      status: response.status,
+      codes: Array.isArray(error?.errors)
+        ? error.errors.map((item) => item?.code).filter(Number.isInteger)
+        : [],
+    });
+    throw new Error("Provider rejected the request");
+  }
+  return response.json();
 }
 
 export async function onRequest(context) {
