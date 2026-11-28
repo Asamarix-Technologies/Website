@@ -38,7 +38,7 @@
       </div>
       <div class="prose">
         <p>Asamarix needed a site that could grow with the business and keep everyday content changes simple. Service, project, and company pages use static HTML and a shared stylesheet. The contact page uses a single Cloudflare Pages Function for submissions.</p>
-        <h3>Deployment and security</h3>
+        <h3>Deployment and Security</h3>
         <p>GitHub tracks source changes and Cloudflare Pages provides previews before production rollout. The inquiry endpoint checks request origins, validates fields, verifies Turnstile server-side, and sends plain-text email to a fixed inbox. Security headers restrict the resources the public pages can load.</p>
         <h3>Maintenance</h3>
         <p>Content can be updated without a frontend build system. The contact endpoint has its own deployment configuration, so updating a service description doesn’t require changes to the email flow.</p>
