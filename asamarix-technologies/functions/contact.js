@@ -156,17 +156,25 @@ function readFields(body) {
 async function postJson(url, data, token) {
   const headers = { "Content-Type": "application/json" };
   if (token) headers.Authorization = `Bearer ${token}`;
+  const signal = AbortSignal.timeout(6000);
+  const provider = new URL(url).hostname;
+  console.info("Contact provider request starting", { provider });
+
   const response = await fetch(url, {
     method: "POST",
     headers,
     body: JSON.stringify(data),
     redirect: "error",
-    signal: AbortSignal.timeout(6000),
+    signal,
+  });
+  console.info("Contact provider response received", {
+    provider,
+    status: response.status,
   });
   if (!response.ok) {
     const error = await response.json().catch(() => null);
     console.warn("Contact provider rejected request", {
-      provider: new URL(url).hostname,
+      provider,
       status: response.status,
       codes: Array.isArray(error?.errors)
         ? error.errors.map((item) => item?.code).filter(Number.isInteger)
