@@ -47,12 +47,25 @@ function result(status, title, message) {
 }
 
 function configured(env, url) {
-  const allowed = (env.CONTACT_ORIGINS || "").split(",").map((value) => value.trim());
-  return allowed.includes(url.origin)
-    && /^[A-Za-z0-9_-]{10,100}$/.test(env.TURNSTILE_SITE_KEY || "")
-    && Boolean(env.TURNSTILE_SECRET && env.EMAIL_API_TOKEN)
-    && /^[a-f0-9]{32}$/i.test(env.EMAIL_ACCOUNT_ID || "")
-    && emailPattern.test(env.EMAIL_FROM || "");
+  const allowed = (env.CONTACT_ORIGINS || "")
+    .split(",")
+    .map((value) => value.trim());
+
+  const checks = {
+    CONTACT_ORIGINS: allowed.includes(url.origin),
+    TURNSTILE_SITE_KEY: /^[A-Za-z0-9_-]{10,100}$/.test(env.TURNSTILE_SITE_KEY || ""),
+    TURNSTILE_SECRET: Boolean(env.TURNSTILE_SECRET),
+    EMAIL_ACCOUNT_ID: /^[a-f0-9]{32}$/i.test(env.EMAIL_ACCOUNT_ID || ""),
+    EMAIL_FROM: emailPattern.test(env.EMAIL_FROM || ""),
+    EMAIL_API_TOKEN: Boolean(env.EMAIL_API_TOKEN),
+  };
+
+  const failed = Object.keys(checks).filter((name) => !checks[name]);
+  if (failed.length > 0) {
+    console.warn(`Contact configuration failed: ${failed.join(", ")}`);
+  }
+
+  return failed.length === 0;
 }
 
 async function showForm(context, enabled) {
