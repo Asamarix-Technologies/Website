@@ -159,11 +159,20 @@ async function postJson(url, data, token) {
     redirect: "error",
     signal: AbortSignal.timeout(6000),
   });
-  if (!response.ok) {
-    await response.body?.cancel();
-    throw new Error("Provider rejected the request");
-  }
-  return response.json();
+  
+ if (!response.ok) {
+  const provider = new URL(url).hostname;
+  const error = await response.json().catch(() => null);
+
+  console.warn("Contact provider rejected request", {
+    provider,
+    status: response.status,
+    codes: Array.isArray(error?.errors)
+      ? error.errors.map(({ code }) => code).filter(Number.isInteger)
+      : [],
+  });
+
+  throw new Error("Provider rejected the request");
 }
 
 export async function onRequest(context) {
