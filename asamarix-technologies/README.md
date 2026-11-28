@@ -1,6 +1,6 @@
 # Asamarix Technologies website
 
-Beta V1.21. The public site uses static HTML and CSS. A Cloudflare Pages Function handles the contact form and validates Turnstile before submitting plain-text email through Cloudflare Email Sending.
+Beta V1.22. The public site uses static HTML and CSS. A Cloudflare Pages Function handles the contact form and validates Turnstile before submitting plain-text email through Cloudflare Email Sending.
 
 ## Repository layout
 
@@ -8,7 +8,9 @@ Beta V1.21. The public site uses static HTML and CSS. A Cloudflare Pages Functio
 | --- | --- |
 | `public/` | Deployable pages, assets, security headers and routing configuration |
 | `public/deliverables/` | Browser-openable PDFs linked from Services and Projects |
-| `docs/` | Editable report content and the PDF generator |
+| `docs/templates/` | Nine editable Word templates for engagement work |
+| `docs/deliverables.json` | Source content for the nine public examples |
+| `docs/build_deliverables.py` | Local PDF generator |
 | `functions/contact.js` | Contact page activation, submission validation and delivery |
 | `tests/contact.test.mjs` | Local contact regression tests with mocked providers |
 
@@ -28,7 +30,7 @@ Run the contact regression tests with Node.js 22 or newer. The tests use synthet
 node --test tests/contact.test.mjs
 ```
 
-## Deploy Beta V1.21
+## Deploy Beta V1.22
 
 1. Merge the archive contents into the existing repository root on the preview branch. Commit the changes and push the branch. Use `public` as the Pages build output and keep `functions/` at the repo root.
 2. Review Services, Projects, About and Contact on preview. Open the PDFs and confirm the browser viewer loads them. Cloudflare Pages serves them inline and redirects the old `/projects/sample-assessment/` URL to the new PDF. If you are merging the ZIP into an existing checkout, remove the obsolete `public/projects/sample-assessment/index.html` from that checkout. Check the site at phone width and with keyboard navigation. Confirm the services dropdown includes penetration testing, defensive cybersecurity, systems administration and IT project management.
@@ -55,17 +57,40 @@ For abuse protection, create a zone-level WAF rate limiting rule on the producti
 
 The contact page describes what is collected and how inquiries are routed. Keep that note aligned with actual handling and access to the inbox.
 
-## Reusing the Report Template
+## Using the Engagement Templates
 
-The PDF named **Asamarix.com Pentest Report** is a hypothetical web application report. Its editable source is the first entry in `docs/deliverables.json`. To reuse the structure for a future authorized assessment, duplicate that entry, choose a unique filename, and fill in the engagement record, approved scope and exclusions, coverage, findings, evidence references, impact, remediation and retest criteria. Record actual results separately from planned work. Keep client evidence and any non-public report sources outside this public repository.
+Each PDF under `public/deliverables/` has a corresponding editable Word file in `docs/templates/`. The filenames share a stem. Open the PDF to see a completed fictional example and make a copy of the matching DOCX in the authorized engagement workspace. The Word files are separate working masters, with document control, bracketed instructions, editable tables and approval fields. Only the PDFs are linked from the website. A public GitHub repository also exposes the files under `docs/`, so keep completed client work and supporting evidence in private engagement storage.
 
-The PDFs are already included in the release. To regenerate public examples locally, edit `docs/deliverables.json` and run the following from the repo root. ReportLab is required only for authoring PDFs. Cloudflare needs no PDF build step.
+1. Record the client, engagement ID, scope, timeframe, audience and reviewers. For an assessment, identify the written authorization and approved activities. Replace the bracketed prompts and remove drafting instructions before issue.
+2. In a pentest report, duplicate the finding page for each issue. Assign stable IDs to findings and evidence. Document the business consequence, assumptions and limits for each result. Tie each finding to a treatment owner, deadline, acceptance condition and independent retest.
+3. For defensive work, start with the risk register. Put named accountable owners and measurable exit criteria in the schedule. Record the evidence reference, residual risk and approval or exception expiry before closure.
+4. The other three templates are designed for use during delivery. Use the maintenance runbook to set the last safe rollback time, the cutover plan to assign go/no-go authority, and the interface specification to agree on replay, reconciliation and acceptance behavior.
+5. Export the reviewed copy to PDF, then verify page breaks, references, handling labels and recipient list. Record the issue date, version and approval in the private engagement record.
+
+### Interpreting the Example Scores
+
+| Measure | How the examples use it |
+| --- | --- |
+| CVSS v3.1 Base | Technical severity on a 0–10 scale. The record identifies the vector and whether the score comes from NVD or the sample analyst. Version 3.1 matches the published vectors selected for these examples. Record the version used in a new engagement. |
+| CVE | Use a published identifier only after checking vendor, product, build, configuration and backport status. A bespoke access-control gap can have a severity rating without an assigned CVE. |
+| EPSS | FIRST’s estimate of the probability that a published CVE will see exploitation activity in the wild during the next 30 days. The examples freeze the **1 January 2025** data for reproducibility. Retrieve and date a fresh value for each engagement. |
+| Engagement risk | Estimate the likelihood of a specified material impact to this organization over 90 days. The examples use illustrative bands of below 10%, 10–40% inclusive and above 40%. Multiply the likelihood tier (1–3) by business impact (1–3). Products of 1–2 are Low, 3–4 Moderate, 6 High and 9 Critical. Record the assumptions and evidence quality. |
+
+Each security example links its framework choices to a finding or decision. MITRE CWE identifies weakness classes, ATT&CK describes relevant behaviors, OWASP supplies an applicable category and edition, and PTES informs the executive and technical reporting structure. The watermark identifies the original Asamarix report material. The underlying standards and third-party advisory material retain their respective attribution.
+
+### Updating the Published Examples
+
+Edit the corresponding entry in `docs/deliverables.json`. Each entry supplies a stable filename and an ordered list of pages. Page blocks support narrative, notes, metric summaries, tables, reference links, bar charts and milestones. Keep the public label and synthetic evidence on website examples. The Word templates can be edited directly and have their own layout.
+
+From the repo root, run the commands below to rebuild the PDFs. ReportLab is a local authoring dependency. The repository already contains the finished PDFs for Cloudflare Pages.
 
 ```sh
 python -m pip install reportlab
 python docs/build_deliverables.py
 ```
 
+Open the regenerated files before committing. Review the longest finding, chart labels, source links and printed page numbers. If content no longer fits, split the section into another page in the source.
+ 
 ## Future Projects
 
 The sample report uses fictional findings and synthetic context. Add any carrier integration reliability demo as a separate project, then link its case study from the site when it is ready.
