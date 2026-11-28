@@ -159,7 +159,7 @@ async function postJson(url, data, token) {
     redirect: "error",
     signal: AbortSignal.timeout(6000),
   });
-  
+
  if (!response.ok) {
   const provider = new URL(url).hostname;
   const error = await response.json().catch(() => null);
